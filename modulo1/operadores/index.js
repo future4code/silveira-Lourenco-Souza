@@ -91,3 +91,70 @@ console.log("O valor de " + c+"°C em Kelvin é:", celsiusKelvin);
 
 // --------------------------------------------------------------------------------------------------------------------------------
 
+let qHora = 0.05
+let desc = 0.15
+
+
+console.log("Vc deverá pagar: R$", Math.abs(((qHora * 280) * desc) - qHora * 280) + " reais");
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+
+// a) Procure uma forma de converter libra (lb) para quilograma (kg) e escreva um programa que converta 20lb para kg. Imprima  a resposta no console da seguinte forma: 
+
+let lb = 20
+
+let kg = lb / 2.2046
+console.log("20lb equivalem a " + kg + " kg");
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+
+//b) Procure uma forma de converter onça (oz) para quilograma (kg) e escreva um programa que converta 10.5oz para kg. Imprima  a resposta no console da seguinte forma: 
+
+let oz = 10.5
+
+let kgB = oz / 3.527
+console.log("10.5oz equivalem a " + kgB + " kg");
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+// c) Procure uma forma de converter milha (mi) para metro (m) e escreva um programa que converta 100mi para m. Imprima  a resposta no console da seguinte forma: 
+
+let mi = 100
+
+let metro = mi * 1609
+console.log("100mi equivalem a " + metro + " m");
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+// d) Procure uma forma de converter pés (ft) para metro (m) e escreva um programa que converta 50ft para m. Imprima  a resposta no console da seguinte forma: 
+
+let ft = 50
+
+metroB = ft / 3.281
+console.log('50ft equivalem a ' + metroB + ' m');
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+// e) Procure uma forma de converter galão (gal) para litro (l) e escreva um programa que converta 103.56gal para litro. Imprima  a resposta no console da seguinte forma:
+// Não foi possível encontrar uma fórmula exata pois depende do país, EUA e Reino Unido usam fórmulas diferentes.
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+// f) Procure uma forma de converter xícara (xic) para litro (l) e escreva um programa que converta 450xic para litro. Imprima  a resposta no console da seguinte forma: 
+
+let xic = 450
+
+let litro = xic / 4
+console.log('450 xic equivalem a ' + litro + ' l');
+
+// --------------------------------------------------------------------------------------------------------------------------------
+
+// g) Escolha ao menos um dos itens anteriores e modifique o programa para que ele peça ao usuário o valor da unidade original antes de converter
+
+let xicB = Number(prompt("Quantas xícaras você quer usar?: "))
+
+let litroB = xicB / 4
+console.log( xicB+' xic equivalem a ' + litroB + ' l');
+
