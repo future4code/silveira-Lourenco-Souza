@@ -150,6 +150,9 @@ func(x, y)
 const cateto1 = Number(prompt('Digite o valor do primeiro cateto: '))
 const cateto2 = Number(prompt('Digite o valor do segundo cateto: '))
 
-const hipotenusa = (cateto1, cateto2) => (cateto1 ** 2) + (cateto2 ** 2)
+const hipotenusa = (cateto1, cateto2) => {
+    
+    ((cateto1 ** 2) + (cateto2 ** 2)) ** 0.5
+}
 
 console.log(hipotenusa(cateto1, cateto2));
