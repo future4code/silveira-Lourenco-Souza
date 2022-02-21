@@ -122,13 +122,13 @@ function checaRenovacaoRG() {
 }
 
 // EXERCÍCIO 14
-// function checaAnoBissexto(ano) {
-//   const condUm = ano % 400 === 0
-//   const condDois = ano % 4 === 0 
-//   const condTres = ano % 100 === 0 && ano % 400 === 0
+function checaAnoBissexto(ano) {
+  const condUm = ano % 400 === 0
+  const condDois = ano % 4 === 0 
+  const condTres = ano % 100 !== 0 
 
-//   return condUm || condDois || condTres
-// }
+  return condUm || condDois && condTres
+}
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
