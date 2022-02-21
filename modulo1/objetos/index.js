@@ -111,3 +111,53 @@ console.log(carrinho);
 // ------------------------------------------------------------------------------------------------
 // Desafios
 
+// 1.
+let nome = prompt('Qual seu nome?: ')
+let idade = Number(prompt('Qual seu idade?: '))
+let prof = prompt('Qual sua profissão?: ')
+
+let register = (nome, idade, prof) => {
+    const objeto = {
+        nome: nome,
+        profissao: prof,
+        idede: idade
+    }
+
+    console.log(objeto);
+}
+
+register(nome, idade, prof)
+
+// ------------------------------------------------------------------------------------------------
+// 2.
+
+let filmeUm = {
+    nome: "EX",
+    anoLançamento: 2000
+}
+
+let filmeDois = {
+    nome: "EX",
+    anoLançamento: 2000
+}
+
+const comparacaoFilme = (obj1, obj2) => {
+    console.log(`O primeiro filme foi lançado antes do segundo?: ${obj1.anoLançamento < obj2.anoLançamento}`);
+    console.log(`O primeiro filme foi lançado no mesmo ano do segundo?: ${obj1.anoLançamento === obj2.anoLançamento}`);
+
+}
+
+comparacaoFilme(filmeUm, filmeDois)
+
+// ------------------------------------------------------------------------------------------------
+// 3.
+
+let control = (objeto) => {
+    objeto.disp = false
+}
+
+control(fruta)
+control(frutaDois)
+control(frutaTres)
+
+console.log(carrinho);
