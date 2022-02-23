@@ -36,7 +36,7 @@ if (quantPet === 0) {
     console.log(nomePet);
 }
 
-// ---------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 
 // 2.a)
 
@@ -97,3 +97,84 @@ for (let c in array) {
 
 console.log(`O maior número é ${numMaior} e o menor é ${numMenor}`);
 
+// ------------------------------------------------------------------------------------------------
+// Desafios
+
+// 1.
+let numPlayerOne = Number(prompt('Player 1, digite o número para que o Player 2 tente adivinhar. Não deixe que ele veja.'))
+
+
+let numPlayerTwo = 0
+console.log('Vamos jogar!');
+
+let tentativa = 1
+
+do {
+
+
+    numPlayerTwo = Number(prompt('Player 2, tente adivinhar o número que o Player 1 pensou. Digite aqui sua tentativa:'))
+
+    console.log(`O número chutado foi: ${numPlayerTwo}`);
+
+    // <------------------------------------------------------------------------------------------>
+
+
+    if (numPlayerTwo > numPlayerOne) {
+        console.log("Errrrrrrrou, é maior");
+        tentativa++
+
+    } else if (numPlayerTwo < numPlayerOne) {
+        console.log("Errrrrrrrou, é menor");
+        tentativa++
+
+    } else if (numPlayerTwo === numPlayerOne) {
+        console.log("Acertou!!");
+        console.log(`O número de tentativas foi: ${tentativa}`);
+
+    }
+
+} while (numPlayerTwo !== numPlayerOne)
+
+// ------------------------------------------------------------------------------------------------
+
+// 2.
+const getRandomNum = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+let numPlayerOne = getRandomNum(1, 100)
+
+
+let numPlayerTwo = 0
+console.log('Vamos jogar!');
+
+let tentativa = 1
+
+while (numPlayerTwo !== numPlayerOne) {
+
+
+    numPlayerTwo = Number(prompt('Player 2, tente adivinhar o número que o Player 1 pensou. Digite aqui sua tentativa:'))
+
+    console.log(`O número chutado foi: ${numPlayerTwo}`);
+
+    // <------------------------------------------------------------------------------------------>
+
+
+    if (numPlayerTwo > numPlayerOne) {
+        console.log("Errrrrrrrou, é maior");
+        tentativa++
+
+    } else if (numPlayerTwo < numPlayerOne) {
+        console.log("Errrrrrrrou, é menor");
+        tentativa++
+
+    } else if (numPlayerTwo === numPlayerOne) {
+        console.log("Acertou!!");
+        console.log(`O número de tentativas foi: ${tentativa}`);
+
+    }
+
+} 
+
+//Foi relativamente fácil, já que consigo ler em inglês, o que facilita para mim encontrar as respostas no stackoverflow.
