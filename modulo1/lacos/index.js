@@ -40,7 +40,7 @@ if (quantPet === 0) {
 
 // 2.a)
 
-let arrayOrigial = [1, 2, 3, 4, 5]
+const arrayOrigial = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
 for (let c in arrayOrigial) {
     console.log(arrayOrigial[c]);
@@ -48,16 +48,16 @@ for (let c in arrayOrigial) {
 
 // b)
 
-let arrayOrigial = [1, 2, 3, 4, 5]
+const arrayOrigial = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
 for (let c in arrayOrigial) {
-    arrayOrigial[c] = (c / 10)
+    arrayOrigial[c] = (arrayOrigial[c] / 10)
     console.log(arrayOrigial[c]);
 }
 
 // c)
 
-let arrayOrigial = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const arrayOrigial = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 let arrayOrigialPar = []
 
 for (let c in arrayOrigial) {
@@ -67,11 +67,11 @@ for (let c in arrayOrigial) {
 
 }
 
-// // console.log(arrayOrigialPar);
+console.log(arrayOrigialPar);
 
 // d)
 
-let arrayOrigial = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const arrayOrigial = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 let arrayOrigialDescric = []
 
 for (let c in arrayOrigial) {
@@ -82,4 +82,18 @@ for (let c in arrayOrigial) {
 console.log(arrayOrigialDescric);
 
 // e)
+
+const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+let numMaior = 0
+let numMenor = array[0]
+
+for (let c in array) {
+    if (array[c] > numMaior) {
+        numMaior = array[c]
+    } else if (array[c] < numMenor) {
+        numMenor = array[c]
+    }
+}
+
+console.log(`O maior número é ${numMaior} e o menor é ${numMenor}`);
 
