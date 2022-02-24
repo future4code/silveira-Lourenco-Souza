@@ -126,3 +126,24 @@ console.log(produtosYpe);
 
 
 // ------------------------------------------------------------------------------------
+// Desafios
+
+// 1.
+const pokemons = [
+    { nome: "Bulbasaur", tipo: "grama" },
+    { nome: "Bellsprout", tipo: "grama" },
+    { nome: "Charmander", tipo: "fogo" },
+    { nome: "Vulpix", tipo: "fogo" },
+    { nome: "Squirtle", tipo: "água" },
+    { nome: "Psyduck", tipo: "água" },
+]
+
+// a)
+const sorted = pokemons.map((item, index) => `${item.nome}`).sort()
+
+// b)
+const sorted = pokemons.map((item, index) => `${item.tipo}`)
+
+const uniqueTypes = [... new Set(sorted)]
+
+console.log(uniqueTypes);
