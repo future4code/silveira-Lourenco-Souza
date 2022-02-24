@@ -112,4 +112,17 @@ let bebidas = produtos.filter((item) => item.categoria === "Bebidas")
 
 console.log(bebidas);
 
+// d)
 
+const produtosYpe = produtos.filter((item, index) => item.nome.includes("Ypê"))
+
+console.log(produtosYpe);
+
+// e)
+
+const produtosYpe = produtos.filter((item, index) => item.nome.includes("Ypê")).map((item) => `Compre ${item.nome} por R$${item.preco.toFixed(2).replace('.', ',')}`)
+
+console.log(produtosYpe);
+
+
+// ------------------------------------------------------------------------------------
