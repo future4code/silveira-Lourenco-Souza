@@ -12,22 +12,23 @@
  */
 
 
-
+// -------------------------------------------------------------------------------
+// Função que retorna as cartas como um objeto.
 function comprarCarta() {
    // Cria array de cartas
    const cartas = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-   
+
    // Cria array de naipes
    const naipes = ["♦️", "♥️", "♣️", "♠️"]
-   
+
    // Sorteia uma carta
    const numero = cartas[Math.floor(Math.random() * 13)]
-   
+
    // Sorteia um naipe
    const naipe = naipes[Math.floor(Math.random() * 4)]
-   
+
    let valor
-   
+
    // Verifica se é uma das letras e coloca o valor correspondente na variável valor
    if (numero === "A") {
       valor = 11
@@ -36,53 +37,91 @@ function comprarCarta() {
    } else { // Se nao for uma das letras, só converte a string para número
       valor = Number(numero)
    }
-   
+
    // Cria um objeto da carta com as propriedades que vamos precisar: texto e valor
    const carta = {
       texto: numero + naipe,
       valor: valor
    }
-   
+
    return carta
 }
+// -------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------
+// Função que adiciona mais cartas para a mão do jogador
+let drawCards = (hand, numero) => {
+   for (let c = 0; c < numero; c++) {
+      hand = [...hand, comprarCarta()]
+
+   }
+   return hand
+}
+// -------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------
+// Função que soma os valores das cartas na mão do jogador
+let getPoints = (hand) => {
+   let soma = 0
+   for (let c in hand) {
+      soma += hand[c].valor
+   }
+   return soma
+}
+// -------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------
+// Função que imprime como um texto as cartas que o jogador tem em sua mão
+let getCardText = (hand) => {
+   let text = ""
+   for (let c in hand) {
+      text += `${hand[c].texto} `
+   }
+   return text
+}
+// -------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------
+// Função que roda o jogo
+const start = (player, cpu) => {
+
+   player = drawCards(player, 2)
+   cpu = drawCards(cpu, 2)
 
 
-const start = (comprarCarta) =>{
-   let handPlayer = [comprarCarta(), comprarCarta()]
-   
-   let handCpu = [comprarCarta(), comprarCarta()]
-   
-   
-   let playerPoints = handPlayer[0].valor + handPlayer[1].valor
-   
-   let cpuPoints = handCpu[0].valor + handCpu[1].valor
-   
-   
-   console.log(`Usuário - cartas: ${handPlayer[0].texto} ${handPlayer[1].texto} - 
-   pontuação ${playerPoints}`)
-   
-   console.log(`Computador - cartas: ${handCpu[0].texto} ${handCpu[1].texto} - 
-   pontuação ${cpuPoints}`);
+
+
+   console.log(`Usuário - cartas: ${getCardText(player)}- 
+   pontuação ${getPoints(player)}`)
+
+   console.log(`Computador - cartas: ${getCardText(cpu)}- 
+   pontuação ${getPoints(cpu)}`);
+
    console.log(" ------------------------");
-   
-   if(playerPoints > cpuPoints) {
+
+   if (getPoints(player) > getPoints(cpu)) {
       console.log("O usuário ganhou!")
-   } else if (playerPoints < cpuPoints) {
+   } else if (getPoints(player) < getPoints(cpu)) {
       console.log("O computador ganhou!")
-   } else if (playerPoints === cpuPoints) {
+   } else if (getPoints(player) === getPoints(cpu)) {
       console.log("Empate!");
    }
-   
+
 }
+// -------------------------------------------------------------------------------
 
-
+// -------------------------------------------------------------------------------
+// Início do jogo
 console.log("Boas vindas ao jogo de Blackjack!")
 console.log(" ------------------------");
 
 
-if (confirm("Quer iniciar uma nova rodada?")){
+if (confirm("Quer iniciar uma nova rodada?")) {
 
-   start(comprarCarta)
+   let player = []
+   let cpu = []
+   start(player, cpu)
 } else {
    console.log("O jogo acabou");
 }
+// -------------------------------------------------------------------------------
