@@ -23,7 +23,6 @@
  * 
  */
 
-
 // -------------------------------------------------------------------------------
 // Função que retorna as cartas como um objeto.
 function comprarCarta() {
@@ -140,7 +139,6 @@ let turn = (player, cpu) => {
 }
 // -------------------------------------------------------------------------------
 
-
 // -------------------------------------------------------------------------------
 // Fase do computador
 let turnAi = (cpu, player) => {
@@ -189,15 +187,12 @@ As cartas do computador são${getCardText(cpu)}.
 A pontuação do computador é ${getPoints(cpu)}
  ------------------------
 ${resultado}
-   `)
-
-}
+   `)}
 // -------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------
 // Início do jogo. Estrutura principal.
 alert("Boas vindas ao jogo de Blackjack! 🃏")
-
 
 
 if (confirm("Quer iniciar um novo jogo? 🤔")) {
