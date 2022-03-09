@@ -1,0 +1,65 @@
+html {
+    background-color: black;
+}
+
+body {
+    background-color: white;
+    display: block;
+    align-items: center;
+}
+
+footer {
+    border: 1px black solid;
+    background-color: black;
+}
+
+#follow {
+    margin: 10px 0px 4px 0px;
+    color: white;
+}
+
+.social-network {
+    filter: brightness(0) invert(1);
+    height: 40px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Controle de Estoque */
+
+.produto {
+    height: 220px;
+    padding: 0px 30px;
+}
+
+table, th {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.quantidade {
+    font-size: 25px;
+    width: 100px;
+}
+
+.descricao {
+    width: 190px;
+    padding: 0px 10px;
+}
+
+.preco {
+    width: 145px;
+}
+
+del {
+    font-size: 17px;
+    color: red;
+}
+
+.sale {
+    font-size: 25px;
+    color: green;
+}
