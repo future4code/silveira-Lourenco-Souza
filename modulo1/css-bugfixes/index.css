@@ -31,7 +31,8 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 div>p:first-child {
@@ -123,7 +124,7 @@ table {
 }
 
 /* Adicionado por mim para alinhar o texto da tabela */
-.roupa {
+.roupa-nome {
     text-align: center;
 }
 
