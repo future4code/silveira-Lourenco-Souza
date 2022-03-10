@@ -163,3 +163,16 @@ td button:active {
 #back-button:hover {
     background-color: #635a3d
 }
+
+#search {
+    width: 30px;
+    height: 30px;
+}
+
+#search:hover{
+    opacity: 0.3;
+}
+
+#search:active{
+    opacity: 1;
+}
