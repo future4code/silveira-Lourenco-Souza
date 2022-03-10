@@ -9,6 +9,11 @@
     padding: 0;
 }
 
+/* Editado por mim para remover todos os underlines das tags anchor */
+a {
+    text-decoration: none;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -46,6 +51,7 @@ div img {
     color: white;
     display: block;
     margin: auto;
+    margin-top: 10px;
 }
 
 .botao-amarelo:hover {
