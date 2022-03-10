@@ -80,6 +80,16 @@ div img {
     padding-top: 30px;
 }
 
+#container-de-descricao>p {
+    width: 180px;
+    height: 20px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding-bottom: 25px;
+}
+    
+
 #container-de-descricao>ol {
     padding: 15px 0px;
 }
