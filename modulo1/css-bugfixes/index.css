@@ -7,7 +7,7 @@
 * {
     margin: 0;
     padding: 0;
-}
+    font-family: 'Roboto', sans-serif;}
 
 /* Editado por mim para remover todos os underlines das tags anchor */
 a {
@@ -78,7 +78,7 @@ div>p:first-child {
 
 /* Adicionado por mim para resolver o issue 4 */
 #container-de-descricao>p {
-    width: 180px;
+    width: 206px;
     height: 20px;
     text-align: center;
     display: block;
