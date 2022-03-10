@@ -80,6 +80,7 @@ div img {
     padding-top: 30px;
 }
 
+/* Adicionado por mim para resolver o issue 4 */
 #container-de-descricao>p {
     width: 180px;
     height: 20px;
@@ -118,6 +119,12 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: auto;
+}
+
+/* Adicionado por mim para alinhar o texto da tabela */
+.roupa {
+    text-align: center;
 }
 
 td button {
