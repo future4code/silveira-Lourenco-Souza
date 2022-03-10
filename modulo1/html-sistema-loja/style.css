@@ -4,13 +4,47 @@ html {
 
 body {
     background-color: white;
-    display: block;
-    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2, .empresa {
+    margin: 10px 0 3px 35px ;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: black;
+    font-size: 20px;
+    padding: 10px 0px;
+}
+
+.nav-options{
+    border: 1px black solid;
+    text-decoration: none;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#logo-empresa {
+    height: 80px;
+}
+
+
+figcaption {
+    font-size: 15px;
 }
 
 footer {
     border: 1px black solid;
     background-color: black;
+    display: block;
 }
 
 #follow {
@@ -31,7 +65,12 @@ footer {
     padding: 0px 30px;
 }
 
-table, th {
+table {
+    padding: 0 121px;
+
+}
+
+th {
     border: 1px solid black;
 }
 
@@ -62,4 +101,33 @@ del {
 .sale {
     font-size: 25px;
     color: green;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Funcionários */
+
+.workers-info {
+    margin: 25px;
+}
+
+li {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container {
+    background-color: white;
+    min-height: 500px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Adicionar produto */
+
+form {
+    margin: 25px 0 0 25px ;
+}
+
+.input {
+        margin: 15px 0px ;
+
 }
