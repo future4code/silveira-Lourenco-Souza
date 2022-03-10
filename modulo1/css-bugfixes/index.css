@@ -31,16 +31,11 @@ button:focus {
 }
 
 img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
 }
 
 div>p:first-child {
     display: inline;
-}
-
-div img {
-    background: black;
 }
 
 .botao-amarelo {
