@@ -47,7 +47,7 @@ div>p:first-child {
     color: white;
     display: block;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 70px;
 }
 
 .botao-amarelo:hover {
@@ -158,6 +158,9 @@ td button:active {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    position: relative;
+    left: 50%;
+    margin-top: 170px;
 }
 
 #back-button:hover {
@@ -176,3 +179,4 @@ td button:active {
 #search:active{
     opacity: 1;
 }
+
