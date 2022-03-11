@@ -1,0 +1,133 @@
+html {
+    background-color: black;
+}
+
+body {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2, .empresa {
+    margin: 10px 0 3px 35px ;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: black;
+    font-size: 20px;
+    padding: 10px 0px;
+}
+
+.nav-options{
+    border: 1px black solid;
+    text-decoration: none;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#logo-empresa {
+    height: 80px;
+}
+
+
+figcaption {
+    font-size: 15px;
+}
+
+footer {
+    border: 1px black solid;
+    background-color: black;
+    display: block;
+}
+
+#follow {
+    margin: 10px 0px 4px 0px;
+    color: white;
+}
+
+.social-network {
+    filter: brightness(0) invert(1);
+    height: 40px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Controle de Estoque */
+
+.produto {
+    height: 220px;
+    padding: 0px 30px;
+}
+
+table {
+    padding: 0 121px;
+
+}
+
+th {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.quantidade {
+    font-size: 25px;
+    width: 100px;
+}
+
+.descricao {
+    width: 190px;
+    padding: 0px 10px;
+}
+
+.preco {
+    width: 145px;
+}
+
+del {
+    font-size: 17px;
+    color: red;
+}
+
+.sale {
+    font-size: 25px;
+    color: green;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Funcionários */
+
+.workers-info {
+    margin: 25px;
+}
+
+li {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container {
+    background-color: white;
+    min-height: 500px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Adicionar produto */
+
+form {
+    margin: 25px 0 0 25px ;
+}
+
+.input {
+        margin: 15px 0px ;
+
+}
