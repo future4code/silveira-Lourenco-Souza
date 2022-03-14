@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+    header {
+        background-color: mediumvioletred;
+        /* display: flex; */
+    }
+
+    main {
+        display: flex;
+        flex-grow: 1;
+    }
+
+        nav {
+                background-color: #f2d0e0;
+
+        }
+
+        .container {
+
+        }
+
+    footer {
+        background-color: mediumvioletred;
+        /* display: flex; */
+    }
