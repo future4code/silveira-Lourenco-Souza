@@ -5,7 +5,8 @@
 }
 
 img {
-    display: none;
+    /* display: none; */
+    width: 10px;
 }
 
 body {
@@ -17,8 +18,36 @@ body {
 
     header {
         background-color: mediumvioletred;
-        /* display: flex; */
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+        padding: 0 20px;
     }
+
+        header figure {
+            display: flex;
+            align-items: center;
+
+        }
+
+            header figcaption {
+                font-size: 30px;
+                font-weight: bolder;
+                padding: 5px;
+            }
+            
+            header img {
+                width: 25px;
+                margin: 0 20px;
+            }
+
+        header button {
+            padding: 2px;
+            width: 50px;
+            font-weight: bold;
+        }
+
 
     main {
         display: flex;
