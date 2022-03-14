@@ -65,5 +65,13 @@ body {
 
     footer {
         background-color: mediumvioletred;
-        /* display: flex; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
     }
+
+        footer span {
+            font-size: 18px;
+            margin: 13px 0 5px 0;
+        }
