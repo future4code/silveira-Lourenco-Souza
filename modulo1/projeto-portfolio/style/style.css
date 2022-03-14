@@ -1,1 +1,252 @@
-/* Devido a alguns compromissos, estarei começando esse projeto apartir de amanhã. */
+body {
+    background-color: #FBFBF2;
+}
+
+header {
+    background-color: #005D8F;
+    color: white;
+    width: 90%;
+    margin: auto;
+}
+
+.nav {
+    list-style-type: none;
+    font-size: 30px;
+    margin: 15px;
+}
+
+.nav-pai {
+    display: flex;
+    
+}
+
+.special-a {
+    text-decoration: none;
+    color: white;
+}
+/* ------------------------------------------------------------ */
+/* Contaienres */
+.container-title{
+text-align: center;
+}
+
+.container-main {
+    width: 70%;
+    margin: auto;
+}
+
+
+.container-info {
+    display: flex;
+    border: #005D8F solid 2px;
+    border-radius: 7px;
+    padding: 3px;
+}
+
+.container-direito{
+    background-color: #DAF5FB;
+    width: 70%;
+    padding: 15px 70px;
+    border-radius: 7px;
+
+
+}
+
+.container-esquerdo {
+    width: 25%;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 7px;
+
+
+}
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+/* Imagem */
+#my-photo {
+    width: 360px;
+    border-radius: 15px;
+    border: #005D8F solid 3px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+/* letreiros */
+h1, h2, h3, h4 {
+    color: #005D8F;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 20px 140px;
+    border-bottom: #005D8F solid 2px;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 20px 230px;
+
+}
+
+h3 {
+    font-size: 25px;
+    border-bottom: #005D8F 1px solid;
+}
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+/* Detalhes Container Esquerdo */
+.perfil-pessoal ~ p {
+    margin: 3px 0;
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+
+span {
+    font-weight:bold ;
+}
+
+#localizacao {
+    margin-top: 7px;
+}
+
+#tecnicas {
+    width: 180px;
+}
+
+#conquistas {
+    width: 245px;
+}
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+/* Detalhes Container Direito */
+.ended {
+    margin-top: 0px;
+}
+
+.begined {
+    margin-bottom: 3px;
+}
+
+.begined-end {
+    margin: 0px;
+}
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+.container-projetos {
+    width: 90%;
+    margin: auto;
+        display: flex;
+
+}
+
+.imagem-projeto {
+    width: 400px;
+    height: 300px;
+}
+
+.imagem-projeto:hover {
+    width: 450px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.img-area {
+    width: 50%;
+    text-align: center;
+}
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+.container-contato {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.icon {
+    width: 100px;
+}
+
+.redes-sociais {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 10%;
+}
+
+.map {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ */
+
+.formulario-de-contato {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input {
+    width: 50%;
+}
+
+#label-block {
+    display: block;
+    width: 100%;
+    margin: 10px;
+    height: 200px;
+    resize: none;
+    border: black 1px solid;
+}
+
+button {
+    background-color: #005D8F;
+    border: none;
+    border-radius: 3px;
+    height: 25px;
+    margin: 20px auto 60px auto;
+    color: white;
+    display: block;
+}
+
+button:active {
+    color: black;
+}
+
+#top-button {
+    text-decoration: none;
+    color: white;
+    position: fixed;
+    background-color: #005D8F;
+    border-radius: 3px;
+    height: 20px;
+    bottom: 10px;
+    right: 30px;
+
+
+}
+
+.fix {
+    width: 90%;
+    margin: 20px auto;
+}
