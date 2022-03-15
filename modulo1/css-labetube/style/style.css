@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -25,7 +30,7 @@ header {
     }
 
     header > span:hover {
-        background-color: #ff0000;
+        background-color: #e34c26;
         color: white;
         padding: 5px 3px;
         border-radius: 5px;
@@ -77,8 +82,17 @@ main {
             }
 
             .card > span {
-                font-size: 25px;
+                font-size: 23px;
                 padding:0 10px;
+            }
+            
+            .card > span > a {
+                
+                background-color: orange;
+                text-decoration: none;
+                padding: 3px 5px;
+                border-radius: 7px;
+                color: white;
             }
 
 
