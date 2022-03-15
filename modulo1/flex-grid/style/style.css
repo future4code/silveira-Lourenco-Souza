@@ -101,8 +101,8 @@ body {
 
             .container div {
                 box-shadow: 2px 2px 5px black;
-                width: 18vw;
-                height: 43vh;
+                width: 360px;
+                height: 412px;
                 margin: 0.5%;
                 text-align: center;
                 display: flex;
@@ -116,7 +116,7 @@ body {
 
                 .container div>span:first-of-type{
                     font-weight: bolder;
-                    font-size: 1.7vw;
+                    font-size: 35px;
                     padding: 3% 0;
                     height: 15%;
                     flex-grow: 1;
@@ -125,8 +125,8 @@ body {
 
                 .container div>span:last-of-type{
                     /* background-color: red; */
-                    height: 4vh;
-                    font-size: 0.9vw;
+                    height: 5vh;
+                    font-size: 17px;
                     padding: 0% 0%;
                     margin: auto;
                     width: 14vw;
