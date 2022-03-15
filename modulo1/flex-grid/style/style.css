@@ -59,7 +59,7 @@ body {
         nav {
             background-color: #f2d0e0;
             display: flex;
-            width: 350px;
+            width: 20%;
 
         }
 
@@ -72,23 +72,68 @@ body {
                 display: flex;
                 width: 100%;
                 margin: 15px 0;
+                align-items: flex-end;
+                flex-wrap: wrap;
                 }
 
                     li img {
-                        width: 25px;
+                        width: 6%;
                         margin: 0 20px;
 
                     }
 
                     li span {
                         flex-grow: 1;
+                        font-size: 1vw;
                     }
 
 
         .container {
             display: flex;
             flex-grow: 1;
+            align-items: flex-start;
+            margin: 0.4vh 0.35vw;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: center;
+
         }
+
+            .container div {
+                box-shadow: 2px 2px 5px black;
+                width: 18vw;
+                height: 43vh;
+                margin: 0.5%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .container div>img {
+                width: 100%;
+                height: 70%;
+            }
+
+                .container div>span:first-of-type{
+                    font-weight: bolder;
+                    font-size: 1.7vw;
+                    padding: 3% 0;
+                    height: 15%;
+                    flex-grow: 1;
+                    /* background-color: green; */
+                }
+
+                .container div>span:last-of-type{
+                    /* background-color: red; */
+                    height: 4vh;
+                    font-size: 0.9vw;
+                    padding: 0% 0%;
+                    margin: auto;
+                    width: 14vw;
+                    display: flex;
+                    align-items: flex-start;
+                    
+                }
 
     footer {
         background-color: mediumvioletred;
