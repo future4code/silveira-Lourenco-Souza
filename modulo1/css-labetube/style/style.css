@@ -60,14 +60,16 @@ main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        grid-gap: 7px;
+        margin-top: 7px;
         justify-items: center;
         align-items: end;
     }
 
         .card {
             border: green solid 1px;
-            height: 320px;
-            width: 370px;
+            height: 100%;
+            width: 100%;
             display: grid;
             /* justify-content: flex-start; */
         }
