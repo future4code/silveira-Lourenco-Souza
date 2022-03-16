@@ -122,3 +122,70 @@ footer {
         background-color: #264de4;
         border-radius: 2px;
     }
+
+
+@media screen and (max-device-width: 480px){ 
+
+
+    body {
+        max-height: 100vh;
+        min-width: 380px;
+    }
+
+    header > span {
+        margin-right: 10px;
+    }
+
+    
+    #container {
+        /* background-color: red; */
+        display: flex;
+        flex-grow: auto;
+        flex-direction: column;
+        max-height: 100%;
+    }
+
+    footer {
+        position: absolute;
+        min-width: 380px;
+        width: 100%;
+        height: 45px;
+        bottom: -200%;
+    }
+
+    .card > span {
+        font-size: 23px;
+        padding:10px 10px;
+            }
+
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 1200px){ 
+    body {
+        max-height: 100vh;
+        min-width: 380px;
+        display: flex;
+    }
+
+    header > span {
+        margin-right: 10px;
+    }
+
+    
+    #container {
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        margin: 0 40px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .card > span {
+        font-size: 23px;
+        padding:10px 10px;
+            }
+}
