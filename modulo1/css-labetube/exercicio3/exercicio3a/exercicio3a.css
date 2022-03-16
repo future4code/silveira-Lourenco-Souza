@@ -7,6 +7,14 @@
     text-align: center;
 }
 
+div, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-self: stretch;
+
+}
+
 span {
     margin: 100px 0;
 }
