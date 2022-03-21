@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+div, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-self: stretch;
+
+}
+
+span {
+    margin: 100px 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    height: 60px;
+    display: flex;
+}
+
+    #verde {
+        background-color: green;
+        flex-grow: 1;
+    }
+
+    #amarelo {
+        background-color: yellow;
+        flex-grow: 3;
+    }
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+    #pink {
+        background-color: fuchsia;
+        flex-grow: 2;
+    }
+
+    .container-top {
+        background-color: black;
+        flex-grow: 1;
+        display: flex;
+    }
+
+        #blue {
+            background-color: blue;
+            flex-grow: 1;
+        }
+
+        .container-middle {
+            flex-grow: 1;
+            display: flex;
+        }
+        
+            #white {
+                background-color: white;
+                flex-grow: 1;
+            }
+            
+            .container-bottle {
+                background-color: black;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                }
+
+                 #red {
+                    background-color: red;
+                    flex-grow: 1;
+                 }   
+
+                 #light-green {
+                    background-color: lightgreen;
+                    flex-grow: 1;
+                 }
+
+footer {
+    background-color: purple;
+    height: 60px;
+
+}
