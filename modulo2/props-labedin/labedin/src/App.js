@@ -59,7 +59,7 @@ function App() {
         />
         
         <CardGrande 
-          imagem="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/2449px-NASA_logo.svg.png" 
+          imagem="https://logodownload.org/wp-content/uploads/2019/03/nasa-logo-4.png" 
           nome="NASA" 
           descricao="Estudando sobre OVINIs 🛸. To the Moon! 🚀" 
         />
