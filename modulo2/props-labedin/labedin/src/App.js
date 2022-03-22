@@ -4,6 +4,7 @@ import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 import Competencias from './components/Competencias/Competencias';
+import locale from './img/locale.png'
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
         />
 
         <CardPequeno
-          imagem='https://cdn-icons.flaticon.com/png/512/4296/premium/4296521.png?token=exp=1647975143~hmac=5708e3cb8b047ee3067481013f9d4cb8'
+          imagem={locale}
           negrito= 'Endereço:'
           texto="Rua 123, Fake. Brasil."
         />
