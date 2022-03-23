@@ -8,6 +8,7 @@ import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import {IconeFixar} from '../IconeFixar/IconeFixar'
+import { SecaoShare } from '../SecaoShare/SecaoShare'
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -79,6 +80,10 @@ class Post extends React.Component {
     this.setState({
       comentando: !this.state.comentando
     })
+
+    this.setState({
+      share: false
+    })
   }
 
   aoEnviarComentario = () => {
@@ -97,6 +102,10 @@ class Post extends React.Component {
   aoClickShare = () => {
     this.setState({
       share: !this.state.share
+    })
+
+    this.setState({
+      comentando: false
     })
   }
 
@@ -131,6 +140,10 @@ class Post extends React.Component {
 
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    }
+
+    if (this.state.share) {
+      componenteComentario = <SecaoShare />
     }
 
     return <PostContainer>
