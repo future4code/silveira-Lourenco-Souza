@@ -45,17 +45,22 @@ const Paragrafo = styled.p`
   flex-grow: 1;
 `
 
+const MinhaDiv = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 class Post extends React.Component {
   state = {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
     numeroComentarios: 0,
-    fixado: false
+    fixado: false,
+    share: false
   }
   
   onClickCurtida = () => {
-    console.log('Curtiu!')
     this.setState({
       curtido: !this.state.curtido
     })
@@ -87,7 +92,12 @@ class Post extends React.Component {
     this.setState({
       fixado: !this.state.fixado
     })
-    console.log('Ativado');
+  }
+
+  aoClickShare = () => {
+    this.setState({
+      share: !this.state.share
+    })
   }
 
   render() {
@@ -108,6 +118,14 @@ class Post extends React.Component {
       iconeFixar = 'https://cdn-icons.flaticon.com/png/512/2099/premium/2099170.png?token=exp=1648072276~hmac=7ca3ae21666ceafeae2206f1cf509489'
     }
 // -----------------------------------------
+
+    let iconeShare
+
+    if(this.state.share) {
+      iconeShare = 'https://cdn-icons.flaticon.com/png/512/1358/premium/1358074.png?token=exp=1648072904~hmac=f4ee14e9db8fe6777b0cc71fdb21214a'
+    } else {
+      iconeShare = 'https://cdn-icons.flaticon.com/png/512/1358/premium/1358023.png?token=exp=1648072902~hmac=2ba18eb1380b9f046a40022b7babecd4'
+    }
 
     let componenteComentario
 
@@ -137,11 +155,20 @@ class Post extends React.Component {
           valorContador={this.state.numeroCurtidas}
         />
 
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
+
+        <MinhaDiv>
+          <IconeFixar
+            icone={iconeShare}
+            onClickIconeFixar={this.aoClickShare}
+          />
+
+          <IconeComContador
+            icone={iconeComentario}
+            onClickIcone={this.onClickComentario}
+            valorContador={this.state.numeroComentarios}
+          />
+        </MinhaDiv>
+
       </PostFooter>
       {componenteComentario}
     </PostContainer>
