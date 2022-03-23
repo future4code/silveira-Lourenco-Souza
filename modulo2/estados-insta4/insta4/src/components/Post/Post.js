@@ -7,6 +7,7 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import {IconeFixar} from '../IconeFixar/IconeFixar'
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -40,12 +41,17 @@ const PostPhoto = styled.img`
   width: 100%;
 `
 
+const Paragrafo = styled.p`
+  flex-grow: 1;
+`
+
 class Post extends React.Component {
   state = {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: 0
+    numeroComentarios: 0,
+    fixado: false
   }
   
   onClickCurtida = () => {
@@ -77,6 +83,13 @@ class Post extends React.Component {
     })
   }
 
+  aoClickFixar = () => {
+    this.setState({
+      fixado: !this.state.fixado
+    })
+    console.log('Ativado');
+  }
+
   render() {
     let iconeCurtida
 
@@ -85,6 +98,16 @@ class Post extends React.Component {
     } else {
       iconeCurtida = iconeCoracaoBranco
     }
+
+// -----------------------------------------
+    let iconeFixar
+
+    if(this.state.fixado) {
+      iconeFixar = 'https://cdn-icons.flaticon.com/png/512/2099/premium/2099240.png?token=exp=1648071795~hmac=c2586145cfc6f56c27760d9a76a922d2'
+    } else {
+      iconeFixar = 'https://cdn-icons.flaticon.com/png/512/2099/premium/2099170.png?token=exp=1648072276~hmac=7ca3ae21666ceafeae2206f1cf509489'
+    }
+// -----------------------------------------
 
     let componenteComentario
 
@@ -95,10 +118,17 @@ class Post extends React.Component {
     return <PostContainer>
       <PostHeader>
         <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
+        <Paragrafo>{this.props.nomeUsuario}</Paragrafo>
+
+        <IconeFixar 
+          icone= {iconeFixar}
+          onClickIconeFixar= {this.aoClickFixar}
+        />
+
       </PostHeader>
 
       <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+
 
       <PostFooter>
         <IconeComContador
