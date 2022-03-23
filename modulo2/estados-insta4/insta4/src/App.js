@@ -7,6 +7,8 @@ const MainContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
+  min-width: 300px;
 `
 
 class App extends React.Component {
