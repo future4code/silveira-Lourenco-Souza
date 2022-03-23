@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+import iconeFacebook from '../../img/my-img/facebook.png'
+import iconeInstagram from '../../img/my-img/instagram.png'
+import iconeTwitter from '../../img/my-img/twitter.png'
+
 const MyImg = styled.img`
     width: 40px;
     margin: 10px 0;
@@ -26,9 +30,9 @@ const clickTW = () => {
 export const SecaoShare = () => {
     return (
         <MyDiv>
-            <MyImg src="https://cdn-icons.flaticon.com/png/512/717/premium/717392.png?token=exp=1648074037~hmac=3e4ba7d3a4bff9e93ddbc7346089d879" alt="Instagram" onClick={clickINS} />
-            <MyImg src="https://cdn-icons-png.flaticon.com/512/747/747374.png" alt="Facebook" onClick={clickFB} />
-            <MyImg src="https://cdn-icons-png.flaticon.com/512/466/466963.png" alt="Twitter" onClick={clickTW} />
+            <MyImg src={iconeInstagram} alt="Instagram" onClick={clickINS} />
+            <MyImg src={iconeFacebook} alt="Facebook" onClick={clickFB} />
+            <MyImg src={iconeTwitter} alt="Twitter" onClick={clickTW} />
         </MyDiv>
     )
 }

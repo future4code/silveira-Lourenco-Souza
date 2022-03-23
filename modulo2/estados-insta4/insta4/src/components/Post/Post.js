@@ -10,6 +10,11 @@ import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import {IconeFixar} from '../IconeFixar/IconeFixar'
 import { SecaoShare } from '../SecaoShare/SecaoShare'
 
+import iconeFixarBranco from '../../img/my-img/bookmark-white.png'
+import iconeFixarPreto from '../../img/my-img/bookmark-black.png'
+import iconeShareBranco from '../../img/my-img/share-white.png'
+import iconeSharePreto from '../../img/my-img/share-black.png'
+
 const PostContainer = styled.div`
   border: 1px solid gray;
   width: 300px;
@@ -122,18 +127,18 @@ class Post extends React.Component {
     let iconeFixar
 
     if(this.state.fixado) {
-      iconeFixar = 'https://cdn-icons.flaticon.com/png/512/2099/premium/2099240.png?token=exp=1648071795~hmac=c2586145cfc6f56c27760d9a76a922d2'
+      iconeFixar = iconeFixarPreto
     } else {
-      iconeFixar = 'https://cdn-icons.flaticon.com/png/512/2099/premium/2099170.png?token=exp=1648072276~hmac=7ca3ae21666ceafeae2206f1cf509489'
+      iconeFixar = iconeFixarBranco
     }
 // -----------------------------------------
 
     let iconeShare
 
     if(this.state.share) {
-      iconeShare = 'https://cdn-icons.flaticon.com/png/512/1358/premium/1358074.png?token=exp=1648072904~hmac=f4ee14e9db8fe6777b0cc71fdb21214a'
+      iconeShare = iconeSharePreto
     } else {
-      iconeShare = 'https://cdn-icons.flaticon.com/png/512/1358/premium/1358023.png?token=exp=1648072902~hmac=2ba18eb1380b9f046a40022b7babecd4'
+      iconeShare = iconeShareBranco
     }
 
     let componenteComentario
