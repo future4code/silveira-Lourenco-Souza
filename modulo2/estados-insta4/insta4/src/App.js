@@ -47,12 +47,48 @@ class App extends React.Component {
 
   state = {
 
-  pessoas: [
-      { nome: 'Paulinha', fotoPerfil: 'https://picsum.photos/50/50?random=1', fotoPost: 'https://picsum.photos/200/150?random=1' },
-      { nome: 'Lourenço', fotoPerfil: 'https://picsum.photos/50/50?random=2', fotoPost: 'https://picsum.photos/200/150?random=2' },
-      { nome: 'José', fotoPerfil: 'https://picsum.photos/50/50?random=3', fotoPost: 'https://picsum.photos/200/150?random=3' }
+    pessoas: [
+        { nome: 'Paulinha', fotoPerfil: 'https://picsum.photos/50/50?random=1', fotoPost: 'https://picsum.photos/200/150?random=1' },
+        { nome: 'Lourenço', fotoPerfil: 'https://picsum.photos/50/50?random=2', fotoPost: 'https://picsum.photos/200/150?random=2' },
+        { nome: 'José', fotoPerfil: 'https://picsum.photos/50/50?random=3', fotoPost: 'https://picsum.photos/200/150?random=3' }
+      ],
 
-    ]
+    pessoasInputValorNome: '',
+    pessoasInputValorFotoPerfil: 'https://picsum.photos/50/50?random=5',
+    pessoasInputValorFotoPost: 'https://picsum.photos/200/150?random=5'
+  }
+
+  onChangeNomePessoas = (event) => {
+    this.setState({
+      pessoasInputValorNome: event.target.value
+    })
+  }
+
+  onChangeFotoPerfilPessoas = (event) => {
+    this.setState({
+      pessoasInputValorFotoPerfil: event.target.value
+    })
+  }
+
+  onChangeFotoPostPessoas = (event) => {
+    this.setState({
+      pessoasInputValorFotoPost: event.target.value
+    })
+  }
+
+  adicionar = () => {
+    const novoInput = {
+      nome: this.state.pessoasInputValorNome,
+      fotoPerfil: this.state.pessoasInputValorFotoPerfil,
+      fotoPost: this.state.pessoasInputValorFotoPost
+    }
+
+    const novoInputDef = [novoInput, ...this.state.pessoas]
+
+    this.setState({
+      pessoas: novoInputDef
+    })
+    
   }
 
   render() {
@@ -72,11 +108,11 @@ class App extends React.Component {
 
         <MyDiv>
           <Myh2>Inst4</Myh2>
-          <MyInput type="text" placeholder='Nome' />
-          <MyInput type="text" placeholder='Link para imagem do perfil' />
-          <MyInput type="text" placeholder='Link para imagem do post' />
+          <MyInput type="text" placeholder=' Nome' onChange={this.onChangeNomePessoas} value={this.state.pessoasInputValorNome} />
+          <MyInput type="text" placeholder=' :Link para imagem do perfil' onChange={this.onChangeFotoPerfilPessoas} value={this.state.pessoasInputValorFotoPerfil} />
+          <MyInput type="text" placeholder=' :Link para imagem do post' onChange={this.onChangeFotoPostPessoas} value={this.state.pessoasInputValorFotoPost} />
 
-          <MyButton>Postar</MyButton>
+          <MyButton onClick={this.adicionar}>Postar</MyButton>
         </MyDiv>
 
         {pessoasNoPost}
