@@ -27,7 +27,10 @@ const CampoDasMensagens = styled.div`
 const CustomSpan = styled.span`
   font-weight: bolder;
 `
-
+const Balao = styled.p`
+  border: solid black 1px;
+  background-color: white;
+`
 
 export default class App extends React.Component {
 
@@ -49,7 +52,7 @@ export default class App extends React.Component {
         <CampoDasMensagens>
           {this.state.mensagens.map((mensag, index) => {
             return (
-              <p key={index}><CustomSpan>{mensag.user}</CustomSpan>{`: ${mensag.texto}`}</p>
+              <Balao key={index}><CustomSpan>{mensag.usuario}</CustomSpan>{`: ${mensag.texto}`}</Balao>
             )
           })}
         </CampoDasMensagens>
