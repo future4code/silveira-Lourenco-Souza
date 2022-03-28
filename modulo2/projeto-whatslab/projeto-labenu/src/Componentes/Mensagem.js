@@ -67,7 +67,7 @@ enviarMensagem = () => {
             <Container>
                 <CampoUsuario type="text" placeholder="Usuário" onChange={this.escrevendoUsuario} value={this.state.usuario} />
                 <CampoMensagem type="text" placeholder="Mensagem" onChange={this.escrevendoTexto} value={this.state.texto} />
-                <CustomButton>
+                <CustomButton onClick={this.enviarMensagem}>
                     <SendImg src={send} alt="Enviar" />
                 </CustomButton>
             </Container>
