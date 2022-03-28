@@ -8,9 +8,10 @@ const Container = styled.div`
 `
 
 const CampoUsuario = styled.input`
-    width: 150px;
+    width: 100px;
     height: 25px;
     margin: 3px;
+    font-weight: bolder;
 `
 
 const CampoMensagem = styled.input`
@@ -32,13 +33,42 @@ const CustomButton = styled.button`
 
 export default class Mensagem extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            usuario: '',
+            texto: ''
+        }
+    }
+    
+
+    escrevendoUsuario = (event) => {
+        this.setState({usuario: event.target.value})
+    }
+
+    escrevendoTexto = (event) => {
+        this.setState({texto: event.target.value})
+    }
+
+enviarMensagem = () => {
+    const mensag = {
+        usuario: this.state.usuario,
+        texto: this.state.texto
+    }
+
+    this.props.addMensag(mensag)
+
+    this.setState({texto: ''})
+
+}
+
     render() {
         return (
             <Container>
-                <CampoUsuario type="text" />
-                <CampoMensagem type="text" />
+                <CampoUsuario type="text" placeholder="Usuário" onChange={this.escrevendoUsuario} value={this.state.usuario} />
+                <CampoMensagem type="text" placeholder="Mensagem" onChange={this.escrevendoTexto} value={this.state.texto} />
                 <CustomButton>
-                    <SendImg src={send} alt="" />
+                    <SendImg src={send} alt="Enviar" />
                 </CustomButton>
             </Container>
         )
