@@ -24,19 +24,39 @@ const CampoDasMensagens = styled.div`
   flex-grow: 1;
 `
 
+const CustomSpan = styled.span`
+  font-weight: bolder;
+`
+
 
 export default class App extends React.Component {
+
+  constructor() {
+    super()
+
+    this.state = {
+      mensagens: []
+    }
+  }
+
+  adMensag = (mensag) => {
+    this.setState({mensagens: [...this.state.mensagens, mensag]})
+  }
 
   render(){
     return(
       <Container>
         <CampoDasMensagens>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
+          {this.state.mensagens.map((mensag, index) => {
+            return (
+              <p key={index}><CustomSpan>{mensag.user}</CustomSpan>{`: ${mensag.texto}`}</p>
+            )
+          })}
         </CampoDasMensagens>
 
-        <Mensagem />
+        <Mensagem 
+          adMensag={this.adMensag}
+        />
       </Container>
     )
   }

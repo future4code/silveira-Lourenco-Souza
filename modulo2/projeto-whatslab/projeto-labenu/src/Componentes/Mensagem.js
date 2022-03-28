@@ -56,7 +56,7 @@ enviarMensagem = () => {
         texto: this.state.texto
     }
 
-    this.props.addMensag(mensag)
+    this.props.adMensag(mensag)
 
     this.setState({texto: ''})
 
