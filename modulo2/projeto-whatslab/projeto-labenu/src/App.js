@@ -30,6 +30,8 @@ const CustomSpan = styled.span`
 const Balao = styled.p`
   border: solid black 1px;
   background-color: white;
+  padding: 12px;
+  margin: 5px;
 `
 
 export default class App extends React.Component {
