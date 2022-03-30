@@ -9,7 +9,7 @@ const TarefaList = styled.ul`
 
 const Tarefa = styled.li`
   text-align: left;
-  text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+  text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')}; //não sei o que aconteceu aqui.
 `
 
 const InputsContainer = styled.div`
@@ -20,9 +20,23 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [],
+      tarefas: [
+          {
+            id: Date.now(),
+            texto: 'texto da primeira tarefa',
+            completa: false,
+        },
+
+          {
+            id: Date.now(),
+            texto: 'texto da segunda tarefa',
+            completa: true,
+        }
+
+      ],
+
       inputValue: '',
-      filtro: ''
+      filtro: 'completas'
     }
 
   componentDidUpdate() {
@@ -37,6 +51,9 @@ class App extends React.Component {
 
   }
 
+  onChangeFilter = (event) => { 
+
+  }
   criaTarefa = () => {
 
   }
@@ -45,9 +62,6 @@ class App extends React.Component {
 
   }
 
-  onChangeFilter = (event) => {
-
-  }
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
