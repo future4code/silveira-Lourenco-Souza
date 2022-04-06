@@ -12,7 +12,6 @@ const header = {
 
 export default class App extends Component {
 
-  usuarios = ['Maria', 'José', 'Helena', 'Lourenço']
 
 
   
@@ -24,7 +23,7 @@ export default class App extends Component {
     buscandoUsuario: ''
   }
   
-  usuariosApi = () => {
+  getUsuarios = () => {
     const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
     axios.get(url, header)
     .then((response) => {
@@ -37,8 +36,35 @@ export default class App extends Component {
     })
   }
 
+  criarUsuario = () => {
+    console.log('Usuário criado');
+    const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
+    const body = {
+      "name": this.state.nome,
+      "email": this.state.email
+    }
+
+    axios.post(url, body, header)
+    .then((response) => {
+      console.log(response.data)
+      this.getUsuarios()
+      this.setState({
+        nome: '',
+        email: ''
+      })
+    }).catch((error) => {
+      console.log(error.response.data);
+    })
+
+    
+
+    
+    
+    
+  }
+
   componentDidMount = () => {
-    this.usuariosApi()
+    this.getUsuarios()
   }
 
 
@@ -50,10 +76,6 @@ export default class App extends Component {
 
   buscarUsuarios = () => {
     console.log('Busca de Usuários');
-  }
-
-  criarUsuario = () => {
-    console.log('Usuário criado');
   }
 
   onChangeNome = (event) => {
