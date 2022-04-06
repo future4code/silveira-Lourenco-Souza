@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import axios from 'axios'
+
+const Button = styled.button`
+  color: red;
+  font-style: italic;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+`
 
 const header = {
   headers: {
@@ -32,14 +41,23 @@ export default class User extends Component {
   }
 
   apagarUsuario = (user) => {
-    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user}`
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user.id}`
 
-    axios.delete(url, header)
-      .then(() => {
-        this.getUsuarios()
-      }).catch((error) => {
-        console.log(error.response.data);
-      })
+    if(window.confirm(`Deseja realmente apagar o usuário(a) ${user.name}?`)){
+      axios.delete(url, header)
+        .then(() => {
+          alert(`Usuário ${user.name} apagado.`)
+          this.getUsuarios()
+        }).catch((error) => {
+          console.log(error.response.data);
+        })
+    }
+      
+        
+      
+    
+
+    
 
 
     console.log(`Usuário ${user} deletado`);
@@ -72,7 +90,7 @@ export default class User extends Component {
 
     const displayUsuarios = this.state.usuarios.map((value) => {
       return (
-        <li key={value.id}>{value.name} <button onClick={() => this.apagarUsuario(value.id)} >X</button> </li>
+        <li key={value.id}>{value.name} <Button onClick={() => this.apagarUsuario(value)} >X</Button> </li>
       )
     })
 

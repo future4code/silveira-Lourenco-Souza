@@ -40,8 +40,9 @@ export default class Form extends Component {
           nome: '',
           email: ''
         })
+        alert('Usuário criado')
       }).catch((error) => {
-        console.log(error.response.data);
+        alert(`${error}. Por favor, tente novamente.`)
       })
   }
 
