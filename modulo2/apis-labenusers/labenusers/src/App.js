@@ -40,6 +40,12 @@ export default class App extends Component {
     })
   }
 
+  onChangeBuscandoUsuario = (event) => {
+    this.setState({
+      buscandoUsuario: event.target.value
+    })
+  }
+
   render() {
 
 
@@ -51,12 +57,12 @@ export default class App extends Component {
         <div>
           { this.state.tela ? 
             <Form criarUsuario={this.criarUsuario} valueNome={this.state.nome} onChangeNome={this.onChangeNome} valueEmail={this.state.email} onChangeEmail={this.onChangeEmail} /> : 
-            <User usuarios={this.usuarios} buscarUsuarios={this.buscarUsuarios} /> }
+            <User usuarios={this.usuarios} buscarUsuarios={this.buscarUsuarios} valueBuscandoUsuario ={this.state.buscandoUsuario} onChangeBuscandoUsuario={this.onChangeBuscandoUsuario} /> }
         </div>
 
           <br />
 
-          <p>{this.state.email}</p>
+          
 
       </div>
     )
