@@ -78,14 +78,15 @@ export default class User extends Component {
 
     return (
       <>
-      <ul>
-        {displayUsuarios}
-      </ul>
+        {this.state.usuarios.length === 0 && <p>Carregando...</p>}
+        <ul>
+          {displayUsuarios}
+        </ul>
 
-      <h4>Procurar usuário:</h4>
+        <h4>Procurar usuário:</h4>
 
-        <input type="text" placeholder='Nome exato para a busca' value={this.state.buscandoUsuario} onChange={this.onChangeBuscandoUsuario} />
-      <button onClick={this.buscarUsuarios}>Salvar edição</button>
+          <input type="text" placeholder='Nome exato para a busca' value={this.state.buscandoUsuario} onChange={this.onChangeBuscandoUsuario} />
+        <button onClick={this.buscarUsuarios}>Salvar edição</button>
 
       </>
     )
