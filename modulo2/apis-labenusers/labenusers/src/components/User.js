@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
+import UserDetail from './UserDetail'
+
 const Button = styled.button`
   color: red;
   font-style: italic;
@@ -31,7 +33,9 @@ export default class User extends Component {
 
   state = {
     usuarios: [],
-    buscandoUsuario: ''
+    buscandoUsuario: '',
+    datail: false, 
+    info: []
   }
 
   componentDidMount = () => {
@@ -59,21 +63,17 @@ export default class User extends Component {
         .then(() => {
           alert(`Usuário ${user.name} apagado.`)
           this.getUsuarios()
+          this.setState({
+            datail: false
+          })
         }).catch((error) => {
           console.log(error.response.data);
         })
     }
-      
-        
-      
-    
-
-    
-
 
     console.log(`Usuário ${user} deletado`);
   }
-
+  
   buscarUsuarios = () => {
 
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/search?name=${this.state.buscandoUsuario}&email=`
@@ -97,26 +97,62 @@ export default class User extends Component {
     })
   }
 
-  render() {
+  detailsUser = (user) => {
+    console.log(`Detalhes ${user.name}`);
+    this.setState({
+      datail: true
+    })
+    this.setState({
+      info: user
+    })
+  }
+
+  getBack = () => {
+    this.setState({
+      datail: false
+    })
+  }
+
+  selectUserDisplay = () => {
 
     const displayUsuarios = this.state.usuarios.map((value) => {
       return (
-        <Li key={value.id}><button> {value.name} </button><Button onClick={() => this.apagarUsuario(value)} >X</Button> </Li>
+        <Li key={value.id}><button onClick={() => this.detailsUser(value)}> {value.name} </button><Button onClick={() => this.apagarUsuario(value)} >X</Button> </Li>
       )
     })
 
-    return (
-      <>
-        {this.state.usuarios.length === 0 && <p>Carregando...</p>}
-        <ul>
-          {displayUsuarios}
-        </ul>
+    if(this.state.datail === true){
+      return <UserDetail getBack={this.getBack} usuarios={this.state.info} apagarUsuario={this.apagarUsuario} />
+    } else {
+      return (
+        <>
+          {this.state.usuarios.length === 0 && <p>Carregando...</p>}
+          <ul>
+            {displayUsuarios}
+          </ul>
 
-        <h4>Procurar usuário:</h4>
+          <h4>Procurar usuário:</h4>
 
           <input type="text" placeholder='Nome exato para a busca' value={this.state.buscandoUsuario} onChange={this.onChangeBuscandoUsuario} />
-        <button onClick={this.buscarUsuarios}>Salvar edição</button>
+          <button onClick={this.buscarUsuarios}>Salvar edição</button>
 
+        </>
+      )
+    }
+  }
+
+  
+
+  
+
+  render() {
+
+    console.log(this.state.datail);
+
+    return (
+      
+      <>
+        {this.selectUserDisplay()}
       </>
     )
   }
