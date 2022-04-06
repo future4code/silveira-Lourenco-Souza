@@ -5,9 +5,9 @@ export default class User extends Component {
 
     const getUsuarios = this.props.usuarios
 
-    const displayUsuarios = getUsuarios.map((value) => {
+    const displayUsuarios = getUsuarios.map((value, id) => {
       return (
-        <li>{value}</li>
+        <li key={id}>{value}</li>
       )
     })
 
@@ -20,7 +20,7 @@ export default class User extends Component {
       <h4>Procurar usuário</h4>
 
       <input type="text" placeholder='Nome exato para a busca' />
-      <button>Salvar edição</button>
+      <button onClick={this.props.buscarUsuarios}>Salvar edição</button>
 
       </>
     )
