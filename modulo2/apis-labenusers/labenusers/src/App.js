@@ -1,123 +1,19 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import Form from './components/Form'
 import User from './components/User'
 
-const header = {
-  headers: {
-    Authorization: 'lourenco-souza-silveira'
-  }
-}
 
 export default class App extends Component {
 
-
-
   
   state = {
-    usuarios: [],
-    tela: true,
-    nome: '',
-    email: '',
-    buscandoUsuario: ''
+    tela: true
   }
-  
-  getUsuarios = () => {
-    const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
-    axios.get(url, header)
-    .then((response) => {
-      console.log(response.data);
-      this.setState({
-        usuarios: response.data
-      })
-    }).catch((error) => {
-      console.log(error.response.data);
-    })
-  }
-
-  criarUsuario = () => {
-    console.log('Usuário criado');
-    const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
-    const body = {
-      "name": this.state.nome,
-      "email": this.state.email
-    }
-
-    axios.post(url, body, header)
-    .then((response) => {
-      console.log(response.data)
-      this.getUsuarios()
-      this.setState({
-        nome: '',
-        email: ''
-      })
-    }).catch((error) => {
-      console.log(error.response.data);
-    }) 
-  }
-
-  apagarUsuario = (user) => {
-    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user}`
-
-    axios.delete(url, header)
-    .then((response) => {
-      console.log(response.data);
-      this.getUsuarios()
-    }).catch((error) => {
-      console.log(error.response.data);
-    })
-
-
-    console.log(`Usuário ${user} deletado`);
-  }
-
-  buscarUsuarios = () => {
-
-    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/search?name=${this.state.buscandoUsuario}&email=`
-
-    axios.get(url, header)
-    .then((response) => {
-      console.log(response.data);
-      this.setState({
-        usuarios: response.data
-      })
-    }).catch((error) => {
-      console.log(error.response.data);
-    })
-
-    console.log('Busca de Usuários');
-  }
-
-
-  componentDidMount = () => {
-    this.getUsuarios()
-  }
-
 
   trocarTela = () => {
     this.setState({
       tela: !this.state.tela,   
-    })
-  }
-
-  
-
-  onChangeNome = (event) => {
-    this.setState({
-      nome: event.target.value
-    })
-  }
-
-  onChangeEmail = (event) => {
-    this.setState({
-      email: event.target.value
-    })
-  }
-
-  onChangeBuscandoUsuario = (event) => {
-    this.setState({
-      buscandoUsuario: event.target.value
     })
   }
 
@@ -126,19 +22,13 @@ export default class App extends Component {
 
     return (
       <div>
-
         <button onClick={this.trocarTela}>Trocar de tela</button>
 
         <div>
-          { this.state.tela ? 
-            <Form criarUsuario={this.criarUsuario} valueNome={this.state.nome} onChangeNome={this.onChangeNome} valueEmail={this.state.email} onChangeEmail={this.onChangeEmail} /> : 
-            <User usuarios={this.state.usuarios} buscarUsuarios={this.buscarUsuarios} valueBuscandoUsuario={this.state.buscandoUsuario} onChangeBuscandoUsuario={this.onChangeBuscandoUsuario} apagarUsuario={this.apagarUsuario} /> }
+          { this.state.tela ? <Form /> : <User /> }
         </div>
 
           <br />
-
-      
-
       </div>
     )
   }
