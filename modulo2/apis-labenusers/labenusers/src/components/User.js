@@ -5,9 +5,20 @@ import axios from 'axios'
 const Button = styled.button`
   color: red;
   font-style: italic;
-  border: none;
   background-color: white;
   cursor: pointer;
+  margin-left: 15px;
+    :hover {
+      background-color: lightpink;
+    }
+`
+const Li = styled.li`
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+    :hover {
+      background-color: lightblue;
+    }
 `
 
 const header = {
@@ -90,7 +101,7 @@ export default class User extends Component {
 
     const displayUsuarios = this.state.usuarios.map((value) => {
       return (
-        <li key={value.id}>{value.name} <Button onClick={() => this.apagarUsuario(value)} >X</Button> </li>
+        <Li key={value.id}><button> {value.name} </button><Button onClick={() => this.apagarUsuario(value)} >X</Button> </Li>
       )
     })
 
