@@ -5,9 +5,9 @@ export default class User extends Component {
 
     const getUsuarios = this.props.usuarios
 
-    const displayUsuarios = getUsuarios.map((value, id) => {
+    const displayUsuarios = getUsuarios.map((value) => {
       return (
-        <li key={id}>{value}</li>
+        <li key={value.id}>{value.name}</li>
       )
     })
 
