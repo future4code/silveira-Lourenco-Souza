@@ -62,7 +62,7 @@ export default class App extends Component {
 
     axios.delete(url, header)
     .then((response) => {
-      console.log(response.data.id);
+      console.log(response.data);
       this.getUsuarios()
     }).catch((error) => {
       console.log(error.response.data);
@@ -70,6 +70,23 @@ export default class App extends Component {
 
 
     console.log(`Usuário ${user} deletado`);
+  }
+
+  buscarUsuarios = () => {
+
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/search?name=${this.state.buscandoUsuario}&email=`
+
+    axios.get(url, header)
+    .then((response) => {
+      console.log(response.data);
+      this.setState({
+        usuarios: response.data
+      })
+    }).catch((error) => {
+      console.log(error.response.data);
+    })
+
+    console.log('Busca de Usuários');
   }
 
 
@@ -84,9 +101,7 @@ export default class App extends Component {
     })
   }
 
-  buscarUsuarios = () => {
-    console.log('Busca de Usuários');
-  }
+  
 
   onChangeNome = (event) => {
     this.setState({
