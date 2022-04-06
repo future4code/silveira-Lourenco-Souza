@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 
 export default class User extends Component {
+
   render() {
 
     const getUsuarios = this.props.usuarios
 
     const displayUsuarios = getUsuarios.map((value) => {
       return (
-        <li key={value.id}>{value.name}</li>
+        <li key={value.id}>{value.name} <button onClick={() => this.props.apagarUsuario(value.id)} >X</button> </li>
       )
     })
 

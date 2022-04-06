@@ -54,14 +54,24 @@ export default class App extends Component {
       })
     }).catch((error) => {
       console.log(error.response.data);
+    }) 
+  }
+
+  apagarUsuario = (user) => {
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user}`
+
+    axios.delete(url, header)
+    .then((response) => {
+      console.log(response.data.id);
+      this.getUsuarios()
+    }).catch((error) => {
+      console.log(error.response.data);
     })
 
-    
 
-    
-    
-    
+    console.log(`Usuário ${user} deletado`);
   }
+
 
   componentDidMount = () => {
     this.getUsuarios()
@@ -107,7 +117,7 @@ export default class App extends Component {
         <div>
           { this.state.tela ? 
             <Form criarUsuario={this.criarUsuario} valueNome={this.state.nome} onChangeNome={this.onChangeNome} valueEmail={this.state.email} onChangeEmail={this.onChangeEmail} /> : 
-            <User usuarios={this.state.usuarios} buscarUsuarios={this.buscarUsuarios} valueBuscandoUsuario ={this.state.buscandoUsuario} onChangeBuscandoUsuario={this.onChangeBuscandoUsuario} /> }
+            <User usuarios={this.state.usuarios} buscarUsuarios={this.buscarUsuarios} valueBuscandoUsuario={this.state.buscandoUsuario} onChangeBuscandoUsuario={this.onChangeBuscandoUsuario} apagarUsuario={this.apagarUsuario} /> }
         </div>
 
           <br />
