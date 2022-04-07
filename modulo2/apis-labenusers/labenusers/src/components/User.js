@@ -70,8 +70,6 @@ export default class User extends Component {
           console.log(error.response.data);
         })
     }
-
-    console.log(`Usuário ${user} deletado`);
   }
   
   buscarUsuarios = () => {
@@ -111,6 +109,7 @@ export default class User extends Component {
     this.setState({
       datail: false
     })
+    this.getUsuarios()
   }
 
   selectUserDisplay = () => {
@@ -126,15 +125,17 @@ export default class User extends Component {
     } else {
       return (
         <>
+        <br />
+        <span>Procurar usuário: </span>
+          <input type="text" placeholder='Nome exato para a busca' value={this.state.buscandoUsuario} onChange={this.onChangeBuscandoUsuario} />
+          <button onClick={this.buscarUsuarios}>Buscar</button>
+
           {this.state.usuarios.length === 0 && <p>Carregando...</p>}
           <ul>
             {displayUsuarios}
           </ul>
 
-          <h4>Procurar usuário:</h4>
 
-          <input type="text" placeholder='Nome exato para a busca' value={this.state.buscandoUsuario} onChange={this.onChangeBuscandoUsuario} />
-          <button onClick={this.buscarUsuarios}>Salvar edição</button>
 
         </>
       )
