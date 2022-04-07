@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Button = styled.button`
+  margin-left: 5px;
+`
 
 const header = {
   headers: {
@@ -88,15 +93,16 @@ export default class Editar extends Component {
 
   showDisplay = () => {
     if (this.state.display === true) {
-      return <button onClick={this.changeDisplay}>Editar</button>
+      return <Button onClick={this.changeDisplay}>Editar</Button>
     } else {
       return (
         <>
           <br />
+          <br />
           <input type="text" placeholder='Digite o novo nome' value={this.state.inputNome} onChange={this.onChangeNome} />
           <input type="text" placeholder='Digite o novo email' value={this.state.inputEmail} onChange={this.onChangeEmail} />
           <button onClick={() => this.editarUsuario(this.props.usuario)}>Salvar</button>
-          <button onClick={this.changeDisplay}>cancelar</button>
+          <Button onClick={this.changeDisplay}>cancelar</Button>
         </>
       )
     }

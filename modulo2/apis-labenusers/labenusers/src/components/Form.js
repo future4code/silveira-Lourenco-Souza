@@ -27,7 +27,6 @@ export default class Form extends Component {
   }
 
   criarUsuario = () => {
-    console.log('Usuário criado');
     const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
     const body = {
       "name": this.state.nome,

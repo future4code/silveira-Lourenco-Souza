@@ -50,8 +50,6 @@ export default class User extends Component {
     const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
     axios.get(url, header)
       .then((response) => {
-        console.log(response.data);
-        console.log('atualizado');
         this.setState({
           usuarios: response.data
         })
@@ -83,15 +81,12 @@ export default class User extends Component {
 
     axios.get(url, header)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           usuarios: response.data
         })
       }).catch((error) => {
         console.log(error.response.data);
       })
-
-    console.log('Busca de Usuários');
   }
 
   onChangeBuscandoUsuario = (event) => {
@@ -101,7 +96,6 @@ export default class User extends Component {
   }
 
   detailsUser = (user) => {
-    console.log(`Detalhes ${user.name}`);
     this.setState({
       datail: true
     })
@@ -152,8 +146,6 @@ export default class User extends Component {
   
 
   render() {
-
-    console.log(this.state.datail);
 
     return (
       
