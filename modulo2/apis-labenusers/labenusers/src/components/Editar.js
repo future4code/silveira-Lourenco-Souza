@@ -41,7 +41,21 @@ export default class Editar extends Component {
   editarUsuario = (user) => {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user.id}`
 
-    if(this.state.inputNome !== ''){
+    if (this.state.inputNome && this.state.inputEmail !== '') {
+      const body = {
+        "name": this.state.inputNome,
+        "email": this.state.inputEmail
+      }
+
+      axios.put(url, body, header)
+        .then(() => {
+          this.changeDisplay()
+          alert(`Usuário ${this.state.inputNome} criado. Email salvo como ${this.state.inputEmail}.`)
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        })
+    } else if(this.state.inputNome !== ''){
       const body = {
         "name": this.state.inputNome
       }
@@ -62,7 +76,7 @@ export default class Editar extends Component {
       axios.put(url, body, header)
         .then(() => {
           this.changeDisplay()
-          alert(`Email ${this.state.inputEmail} atualizado`)
+          alert(`Email do usuário ${this.state.inputNome} atualizado`)
         })
         .catch((error) => {
           console.log(error.response.data);

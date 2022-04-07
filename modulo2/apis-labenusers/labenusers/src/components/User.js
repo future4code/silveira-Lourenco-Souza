@@ -47,6 +47,7 @@ export default class User extends Component {
     axios.get(url, header)
       .then((response) => {
         console.log(response.data);
+        console.log('atualizado');
         this.setState({
           usuarios: response.data
         })
