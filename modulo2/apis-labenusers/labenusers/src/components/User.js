@@ -18,9 +18,13 @@ const Li = styled.li`
   display: flex;
   justify-content: space-between;
   width: 150px;
+  margin: 5px 0;
     :hover {
       background-color: lightblue;
     }
+`
+const ButtonNome = styled.button`
+  cursor: pointer;
 `
 
 const header = {
@@ -117,7 +121,7 @@ export default class User extends Component {
 
     const displayUsuarios = this.state.usuarios.map((value) => {
       return (
-        <Li key={value.id}><button onClick={() => this.detailsUser(value)}> {value.name} </button><Button onClick={() => this.apagarUsuario(value)} >X</Button> </Li>
+        <Li key={value.id}><ButtonNome onClick={() => this.detailsUser(value)}> {value.name} </ButtonNome><Button onClick={() => this.apagarUsuario(value)} >X</Button> </Li>
       )
     })
 
