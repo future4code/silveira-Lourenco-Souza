@@ -7,6 +7,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+    :hover {
+      background-color: #bd0030;
+    }
 `
 export const Button = styled.button`
   height: 50%;
@@ -36,4 +39,5 @@ export const Input = styled.input`
   border-radius: 5px;
   color: black;
   padding: 5px;
+  outline: none;
 `

@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Container, Header, Main, Footer, Grid } from './style'
+import { Container, Header, Main, Footer, Grid, Span, Img, DivLogo } from './style'
 
+import Logo from '../../assets/logo-labefy.png'
 import AddPlaylistCard from '../../components/AddPlaylistCard/AddPlaylistCard'
-
-
-const Span = styled.span`
-  background-color: green;
-  border: 1px blue solid;
-  height: 170px;
-  /* width: 380px; */
-`
 
 
 export default class TemplatePrincipal extends Component {
@@ -18,17 +11,19 @@ export default class TemplatePrincipal extends Component {
     return (
       <Container>
         <Header>
-          <span>Labefy</span>
+
+          <DivLogo>
+            <Img src={Logo} alt="Logo Labefy" />
+            <Span>Labefy</Span>
+          </DivLogo>
         </Header>
 
         <Main>
           <Grid>
           <AddPlaylistCard />
-          {/* <Span>Aqui é o Main</Span> */}
           
           
-          
-  
+
           </Grid>
         </Main>
 

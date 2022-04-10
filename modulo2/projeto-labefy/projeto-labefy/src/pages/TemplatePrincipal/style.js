@@ -8,6 +8,8 @@ export const Container = styled.div`
   margin: auto;
 `
 export const Header = styled.header`
+  display: flex;
+  justify-content: center;
   background-color: #DA0037;
   height: 10vh;
 `
@@ -30,4 +32,24 @@ export const Grid = styled.div`
   justify-content: center;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
+`
+export const Span = styled.span`
+  font-size: 75px;
+  margin: 0px 5px 5px 5px;
+  text-decoration: underline;
+  color: #b4040c;
+`
+export const Img = styled.img`
+  width: 85px;
+  margin: 0;
+`
+export const DivLogo = styled.div`
+  width: 400px;
+
+  justify-content: center;
+  margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  background-color: #EDEDED;
+  border-radius: 10px;
 `
