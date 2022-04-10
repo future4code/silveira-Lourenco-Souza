@@ -24,7 +24,7 @@ export default class TemplatePrincipal extends Component {
         <Main>
           <Grid>
           <AddPlaylistCard />
-          <Span>Aqui é o Main</Span>
+          {/* <Span>Aqui é o Main</Span> */}
           
           
           
