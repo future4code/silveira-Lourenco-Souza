@@ -4,6 +4,7 @@ import { Container, Header, Main, Footer, Grid, Span, Img, DivLogo } from './sty
 
 import Logo from '../../assets/logo-labefy.png'
 import AddPlaylistCard from '../../components/AddPlaylistCard/AddPlaylistCard'
+import PlaylistCard from '../../components/PlaylistCard/PlaylistCard'
 
 
 export default class TemplatePrincipal extends Component {
@@ -22,6 +23,7 @@ export default class TemplatePrincipal extends Component {
           <Grid>
           <AddPlaylistCard />
           
+          <PlaylistCard />
           
 
           </Grid>
