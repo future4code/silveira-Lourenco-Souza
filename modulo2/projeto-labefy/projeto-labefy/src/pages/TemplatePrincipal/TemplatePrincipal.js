@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Container, Header, Main, Footer, Grid } from './style'
 
-import AddPlaylistCard from '../../components/AddPlaylistCard'
+import AddPlaylistCard from '../../components/AddPlaylistCard/AddPlaylistCard'
 
 
 const Span = styled.span`
