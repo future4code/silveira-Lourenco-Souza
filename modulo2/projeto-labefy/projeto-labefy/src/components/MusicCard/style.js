@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Details = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  line-height: 25px;
+`
+
 export const Container = styled.div`
   background-color: #EDEDED;
   border-radius: 8px;
@@ -18,12 +26,12 @@ export const Container = styled.div`
 `
 export const Span = styled.span`
   color: black;
-  padding: 10px;
-  font-size: 30px;
-  width: 80%;
-  flex-grow: 1;
+  font-size: 20px;
   text-decoration: underline;
-  word-break: keep-all;
+`
+export const SpanArtist = styled.span`
+  font-size: 15px;
+  color: black;
 `
 export const ContainerButton = styled.div`
   display: flex;
