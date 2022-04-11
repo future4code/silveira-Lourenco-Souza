@@ -8,6 +8,7 @@ const GlobalStyled = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     color: #EDEDED;
+    user-select: none;
   }
 `
 

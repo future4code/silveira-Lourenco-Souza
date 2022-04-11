@@ -11,34 +11,34 @@ export const Container = styled.div`
       background-color: #bd0030;
     }
 `
+export const Input = styled.input`
+  width: 75%;
+  height: 25px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+  outline: none;
+`
 export const Button = styled.button`
-  height: 50%;
-  margin: 0 10px 10px 10px;
-  border-radius: 7px;
-  /* background-color: #DA0037; */
   cursor: pointer;
+  height: 30px;
+  border-radius: 5px;
+  align-self: flex-start;
+  margin-left: 45px;
+  padding: 3px;
   display: flex;
   align-items: center;
-  padding: 15px;
-    :hover {
+  justify-content: center;
+  :hover {
       opacity: 0.8;
 
     }
 `
 export const Img = styled.img`
-  width: 50px;
+  width: 20px;
 `
 export const Span = styled.span`
-  font-size: 30px;
-  margin: 10px;
   color: black;
-`
-export const Input = styled.input`
-  width: 75%;
-  height: 30px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  color: black;
-  padding: 5px;
-  outline: none;
+  margin: 5px;
 `

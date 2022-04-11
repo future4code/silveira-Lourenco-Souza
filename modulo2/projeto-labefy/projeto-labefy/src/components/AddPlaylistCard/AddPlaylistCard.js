@@ -12,7 +12,7 @@ export default class AddPlaylistCard extends Component {
       <Container>
         <Button>
           <Img src={Add} />
-          <Span>Add Playlist</Span>
+          <Span>Create Playlist</Span>
         </Button>
 
         <Input type="text" placeholder='> Digite aqui o nome da sua Playlist' maxLength={25}/>
