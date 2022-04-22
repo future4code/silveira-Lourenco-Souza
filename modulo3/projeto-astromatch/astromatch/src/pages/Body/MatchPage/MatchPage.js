@@ -1,11 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-`
+import {Container} from './MatchPage-style'
 
 const MatchPage = () => {
   return (

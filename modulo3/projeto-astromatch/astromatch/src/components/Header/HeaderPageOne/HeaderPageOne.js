@@ -1,20 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+
+import { Container, Img, Button } from './HeaderPageOne-style'
 
 import Logo from '../../../assets/IMG//astromatch.png'
-
-const Container = styled.div`
-  border: 1px dotted black;
-  display: flex;
-  justify-content: center;
-`
-const Img = styled.img`
-  width: 150px;
-  margin-left: auto;
-`
-const Button = styled.button`
-  margin-left: auto;
-`
 
 const HeaderPageOne = (props) => {
   return (
