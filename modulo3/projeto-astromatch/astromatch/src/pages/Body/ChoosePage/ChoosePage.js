@@ -12,11 +12,14 @@ const headers = {
 const ChoosePage = () => {
 
   const [profile, setProfile] = useState({})
+  const [loading, setLoading] = useState(true)
 
   const getProfile = () => {
+    setLoading(true)
     axios
     .get(`${BASE_URL}/person`)
     .then((res) => {
+      setLoading(false)
       setProfile(res.data.profile)
       if(res.data.profile === null){
         clear()
@@ -25,7 +28,7 @@ const ChoosePage = () => {
     })
     .catch((err) => {
       console.log(err.data.response);
-      clear()
+      setLoading(true)
     })
   }
 
@@ -68,18 +71,20 @@ const ChoosePage = () => {
     getProfile()
   }
 
-  const loading = () => {
-    if(profile === null){
+  const loadingTest = () => {
+    if(loading){
       return (
         <p>Carregando...</p>
       )
     } else {
       return (  
-        <>
+        <div>
           <Img src={profile.photo} alt={`foto de ${profile.name}`} />
-          <p>{profile.name}</p>
-          <p>{profile.bio}</p>
-        </>
+          <div>
+            <p>{profile.name}</p>
+            <p>{profile.bio}</p>
+          </div>
+        </div>
       )
     }
   }
@@ -88,7 +93,7 @@ const ChoosePage = () => {
     <>
       <Container>
         <ContainerPerson>
-          {loading()}
+          {loadingTest()}
         </ContainerPerson>
 
         <ContainerButton>       
