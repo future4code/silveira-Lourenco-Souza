@@ -6,7 +6,7 @@ import HeaderPageOne from '../../components/Header/HeaderPageOne/HeaderPageOne'
 import HeaderPageTwo from '../../components/Header/HeadePageTwo/HeaderPageTwo'
 import MatchPage from '../Body/MatchPage/MatchPage'
 import ChoosePage from '../Body/ChoosePage/ChoosePage'
-
+import HeaderPage from '../../components/Header/HeaderPage/HeaderPager'
 
 
 const Main = () => {
@@ -20,12 +20,12 @@ const Main = () => {
   const decidePage = () => {
     if(Page === true){
     return( <>
-        <HeaderPageOne onClickButton={onClickPage} />
+        <HeaderPage position={"right"} onClickButton={onClickPage} />
         <ChoosePage />
       </>
     )} else {
       return ( <>
-          <HeaderPageTwo onClickButton={onClickPage} />
+          <HeaderPage position={""} onClickButton={onClickPage} />
           <MatchPage />
         </>
       )}

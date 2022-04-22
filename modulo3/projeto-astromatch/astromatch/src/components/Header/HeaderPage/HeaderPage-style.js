@@ -6,13 +6,13 @@ export const Container = styled.div`
   justify-content: center;
     height: 60px;
     align-items: center;
+
 `
 export const Img = styled.img`
   width: 150px;
-  margin-right: auto;
+  margin-left: auto;
   position: absolute;
-
 `
 export const Button = styled.button`
-  margin-right: auto;
+  ${(p) => p.position == "right" ?  "margin-right: auto" : "margin-left: auto"  };
 `
