@@ -17,11 +17,25 @@ const Main = () => {
     setPage(!Page)
   }
 
+  const decidePage = () => {
+    if(Page === true){
+    return( <>
+        <HeaderPageOne onClickButton={onClickPage} />
+        <ChoosePage />
+      </>
+    )} else {
+      return ( <>
+          <HeaderPageTwo onClickButton={onClickPage} />
+          <MatchPage />
+        </>
+      )}
+  }
+
 
     return (
       <Container>
 
-        {Page === true ? (
+        {/* {Page === true ? (
           <>
             <HeaderPageOne onClickButton={onClickPage} />
             <ChoosePage />
@@ -31,7 +45,9 @@ const Main = () => {
               <HeaderPageTwo onClickButton={onClickPage} />
             <MatchPage />
           </>
-        )}
+        )} */}
+
+        {decidePage()}
 
       </Container>
     )
