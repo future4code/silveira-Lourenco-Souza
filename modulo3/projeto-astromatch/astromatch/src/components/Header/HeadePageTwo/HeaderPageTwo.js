@@ -16,10 +16,10 @@ const Button = styled.button`
   margin-right: auto;
 `
 
-const HeaderPageTwo = () => {
+const HeaderPageTwo = (props) => {
   return (
     <Container>
-      <Button>Lista</Button>
+      <Button onClick={props.onClickButton} >Lista</Button>
       <Img src={Logo} alt="Astromatch Logo" />
     </Container>
   )

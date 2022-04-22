@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 import HeaderPageOne from '../../components/Header/HeaderPageOne/HeaderPageOne'
@@ -16,15 +16,31 @@ const Container = styled.div`
 `
 
 const Main = () => {
-  return (
-    <Container>
 
-      <HeaderPageOne />
-      <ChoosePage />
-      {/* <HeaderPageTwo />
-      <MatchPage /> */}
-    </Container>
-  )
+  const [Page, setPage] = useState(true)
+
+  const onClickPage = () => {
+    setPage(!Page)
+  }
+
+
+    return (
+      <Container>
+
+        {Page === true ? (
+          <>
+            <HeaderPageOne onClickButton={onClickPage} />
+            <ChoosePage />
+          </>
+          ) : (
+          <>
+              <HeaderPageTwo onClickButton={onClickPage} />
+            <MatchPage />
+          </>
+        )}
+
+      </Container>
+    )
 }
 
 export default Main
