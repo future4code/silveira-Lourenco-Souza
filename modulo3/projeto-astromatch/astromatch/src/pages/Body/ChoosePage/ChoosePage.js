@@ -1,22 +1,45 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
-import {Container, ContainerPerson, ContainerButton, Button} from './ChoosePage-style'
+import {Container, ContainerPerson, ContainerButton, Button, Img} from './ChoosePage-style'
+
+import {BASE_URL} from '../../../constants/URL'
+
+
 
 const ChoosePage = () => {
+
+  const [profile, setProfile] = useState({})
+
+  const getProfile = () => {
+    axios
+    .get(`${BASE_URL}/person`)
+    .then((res) => {
+      setProfile(res.data.profile)
+    })
+    .catch((err) => {
+      console.log(err.data.response);
+    })
+  }
+
+useEffect(() => {
+  getProfile()
+}, [])
 
   const onClickYes = () => {
     console.log('Sim...');
   }
 
   const onClickNo = () => {
-    console.log('Não...');
+    getProfile()
   }
+
 
   return (
     <Container>
       <ContainerPerson>
-        <img src="https://picsum.photos/400/400" alt="Imagem" />
-        <p>Principal descrição da pessoa...</p>
+        <Img src={profile.photo} alt={`foto de ${profile.name}`} />
+        <p>{profile.bio}</p>
       </ContainerPerson>
       <ContainerButton>
         

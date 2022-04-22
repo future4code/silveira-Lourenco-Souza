@@ -17,3 +17,7 @@ export const Button = styled.button`
   height: 50px;
   width: 50px;
 `
+export const Img = styled.img`
+  width: 100%;
+  height: 400px;
+`
