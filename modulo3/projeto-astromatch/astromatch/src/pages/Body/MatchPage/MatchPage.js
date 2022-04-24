@@ -40,7 +40,6 @@ const MatchPage = (props) => {
       <Container>
         {mapMatches}
       </Container>
-      <button onClick={props.clear}>Limpar</button>
     </>
   )
 }

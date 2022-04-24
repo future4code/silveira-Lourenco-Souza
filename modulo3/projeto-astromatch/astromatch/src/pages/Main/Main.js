@@ -1,15 +1,23 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 
+import { BASE_URL } from '../../constants/URL'
 import { Container } from './Main-style'
 
 import MatchPage from '../Body/MatchPage/MatchPage'
 import ChoosePage from '../Body/ChoosePage/ChoosePage'
 import HeaderPage from '../../components/Header/HeaderPage/HeaderPager'
 
+const headers = {
+  "Content-Type": "application/json"
+}
+
 
 const Main = () => {
 
   const [Page, setPage] = useState(true)
+  const [noPerson, setNoPerson] = useState(false)
+
 
   const onClickPage = () => {
     setPage(!Page)
@@ -19,7 +27,10 @@ const Main = () => {
     if(Page === true){
     return( <>
         <HeaderPage position={""} onClickButton={onClickPage} />
-        <ChoosePage />
+        <ChoosePage 
+          setNoPerson={setNoPerson}
+          noPerson={noPerson}
+        />
       </>
     )} else {
       return ( <>
@@ -29,13 +40,31 @@ const Main = () => {
       )}
   }
 
+  const clear = () => {
+    axios
+      .put(`${BASE_URL}/clear`, headers)
+      .then((res) => {
+        console.log("cleared");
+        console.log(res.data.message);
+        // getProfile()
+        document.location.reload(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
 
     return (
-      <Container>
+      <>
+        <Container>
 
-        {decidePage()}
+          {decidePage()}
+          <button onClick={clear}>Limpar</button>
 
-      </Container>
+        </Container>
+      </>
+
     )
 }
 

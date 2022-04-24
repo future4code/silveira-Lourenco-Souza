@@ -9,11 +9,10 @@ const headers = {
   "Content-Type": "application/json"
 }
 
-const ChoosePage = () => {
+const ChoosePage = (props) => {
 
   const [profile, setProfile] = useState({})
   const [loading, setLoading] = useState(true)
-  const [noPerson, setNoPerson] = useState(false)
 
   const getProfile = () => {
     setLoading(true)
@@ -23,7 +22,7 @@ const ChoosePage = () => {
       setLoading(false)
       setProfile(res.data.profile)
       if(res.data.profile === null){
-        setNoPerson(true)
+        props.setNoPerson(true)
         console.log("reconhecido!");
       }
     })
@@ -50,19 +49,19 @@ const ChoosePage = () => {
       })
   }
 
-  const clear = () => {
-    axios
-      .put(`${BASE_URL}/clear`, headers)
-      .then((res) => {
-        console.log("cleared");
-        console.log(res.data.message);
-        // getProfile()
-        document.location.reload(true);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
+  // const clear = () => {
+  //   axios
+  //     .put(`${BASE_URL}/clear`, headers)
+  //     .then((res) => {
+  //       console.log("cleared");
+  //       console.log(res.data.message);
+  //       // getProfile()
+  //       document.location.reload(true);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     })
+  // }
 
   useEffect(() => {
     getProfile()
@@ -92,7 +91,7 @@ const ChoosePage = () => {
   }
 
   const personNull = () => {
-    if (noPerson === true){
+    if (props.noPerson === true){
       return (
         <>
           <Container>
@@ -107,7 +106,6 @@ const ChoosePage = () => {
 
 
 
-            <button onClick={clear}>Limpar</button>
           </Container>
         </>
       )
@@ -126,7 +124,6 @@ const ChoosePage = () => {
 
 
 
-            <button onClick={clear}>Limpar</button>
           </Container>
         </>
       )
