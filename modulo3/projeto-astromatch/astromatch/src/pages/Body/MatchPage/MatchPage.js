@@ -6,7 +6,7 @@ import {Container, ContainerPerson, Img, Name} from './MatchPage-style'
 
 
 
-const MatchPage = () => {
+const MatchPage = (props) => {
 
   const [listaMatch, setListaMatch] = useState([])
 
@@ -36,9 +36,12 @@ const MatchPage = () => {
   })
 
   return (
-    <Container>
-      {mapMatches}
-    </Container>
+    <>
+      <Container>
+        {mapMatches}
+      </Container>
+      <button onClick={props.clear}>Limpar</button>
+    </>
   )
 }
 
