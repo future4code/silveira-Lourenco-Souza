@@ -13,6 +13,7 @@ const ChoosePage = () => {
 
   const [profile, setProfile] = useState({})
   const [loading, setLoading] = useState(true)
+  const [noPerson, setNoPerson] = useState(false)
 
   const getProfile = () => {
     setLoading(true)
@@ -22,7 +23,7 @@ const ChoosePage = () => {
       setLoading(false)
       setProfile(res.data.profile)
       if(res.data.profile === null){
-        clear()
+        setNoPerson(true)
         console.log("reconhecido!");
       }
     })
@@ -55,7 +56,8 @@ const ChoosePage = () => {
       .then((res) => {
         console.log("cleared");
         console.log(res.data.message);
-        getProfile()
+        // getProfile()
+        document.location.reload(true);
       })
       .catch((err) => {
         console.log(err);
@@ -89,20 +91,51 @@ const ChoosePage = () => {
     }
   }
 
+  const personNull = () => {
+    if (noPerson === true){
+      return (
+        <>
+          <Container>
+            <ContainerPerson>
+              <p>A sua lista de sugestões acabou...</p>
+            </ContainerPerson>
+
+            <ContainerButton>
+              <Button onClick={() => onClickNo()} disabled >No</Button>
+              <Button onClick={() => choosePerson(profile.id)} disabled >Ok</Button>
+            </ContainerButton>
+
+
+
+            <button onClick={clear}>Limpar</button>
+          </Container>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Container>
+            <ContainerPerson>
+              {loadingTest()}
+            </ContainerPerson>
+
+            <ContainerButton>
+              <Button onClick={() => onClickNo()} >No</Button>
+              <Button onClick={() => choosePerson(profile.id)} >Ok</Button>
+            </ContainerButton>
+
+
+
+            <button onClick={clear}>Limpar</button>
+          </Container>
+        </>
+      )
+    }
+  }
+
   return (
     <>
-      <Container>
-        <ContainerPerson>
-          {loadingTest()}
-        </ContainerPerson>
-
-        <ContainerButton>       
-          <Button onClick={() =>  onClickNo()} >No</Button>
-          <Button onClick={() => choosePerson(profile.id)} >Ok</Button>
-        </ContainerButton>
-
-        <button onClick={clear}>Limpar</button>
-      </Container>
+      {personNull()}
     </>
   )
 }
