@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Like from '../../../components/Loading/Loading'
 
-import {Container, ContainerPerson, ContainerButton, Button, Img, DivParent, DivChild, ContainerLoading} from './ChoosePage-style'
+import {Container, ContainerPerson, ContainerButton, Button, Img, DivParent, DivChild, ContainerLoading, ButtonDis} from './ChoosePage-style'
 
 import {BASE_URL} from '../../../constants/URL'
 
@@ -106,8 +106,8 @@ const ChoosePage = (props) => {
             </ContainerLoading>
 
             <ContainerButton>
-              <Button onClick={() => onClickNo()} disabled >No</Button>
-              <Button onClick={() => choosePerson(profile.id)} disabled >Ok</Button>
+              <ButtonDis onClick={() => onClickNo()} disabled input={""} >No</ButtonDis>
+              <ButtonDis onClick={() => choosePerson(profile.id)} disabled input={"Ok"} >Ok</ButtonDis>
             </ContainerButton>
 
 
@@ -124,8 +124,8 @@ const ChoosePage = (props) => {
             </ContainerPerson>
 
             <ContainerButton>
-              <Button onClick={() => onClickNo()} >No</Button>
-              <Button onClick={() => choosePerson(profile.id)} >Ok</Button>
+              <Button onClick={() => onClickNo()} input={""} >No</Button>
+              <Button onClick={() => choosePerson(profile.id)} input={"Ok"} >Ok</Button>
             </ContainerButton>
 
 

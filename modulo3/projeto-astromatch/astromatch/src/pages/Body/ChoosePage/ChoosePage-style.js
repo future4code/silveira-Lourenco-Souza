@@ -27,13 +27,15 @@ export const ContainerButton = styled.div`
 export const Button = styled.button`
   height: 55px;
   width: 55px;
+  background-color: white;
   margin: 10px 40px;
   cursor: pointer;
   font-size: 25px;
-  border-radius: 40px;
+  border-radius: 50px;
+  ${(p) => p.input === "Ok" ? "color: green" : "color: red"};
     :hover{
+      ${(p) => p.input === "Ok" ? "background-color: green" : "background-color: red"};
       transform: scale(1.2, 1.2);
-      background-color: lightgray;
       color: white;
     }
 `
@@ -70,4 +72,13 @@ export const DivChild = styled.div`
     .Info{
       font-size: 17px;
     }
+`
+export const ButtonDis = styled.button`
+  height: 55px;
+  width: 55px;
+  background-color: lightgray;
+  margin: 10px 40px;
+  font-size: 25px;
+  border-radius: 50px;
+  color: white;
 `
