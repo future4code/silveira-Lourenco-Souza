@@ -25,3 +25,9 @@ export const Name = styled.p`
   font-size: 20px;
   margin: 10px;
 `
+export const ContainerLoading = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
