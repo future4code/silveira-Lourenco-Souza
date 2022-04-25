@@ -8,7 +8,7 @@ const HeaderPage = (props) => {
 
   return (
     <Container >
-      <Button onClick={props.onClickButton} position={props.position} >Lista</Button>
+      <Button onClick={props.onClickButton} position={props.position} ><img src={props.img} alt={props.position} /></Button>
       <Img src={Logo} alt="Astromatch Logo" />
     </Container>
   )

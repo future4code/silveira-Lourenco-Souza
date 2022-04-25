@@ -10,6 +10,9 @@ import MatchPage from '../Body/MatchPage/MatchPage'
 import ChoosePage from '../Body/ChoosePage/ChoosePage'
 import HeaderPage from '../../components/Header/HeaderPage/HeaderPager'
 
+import Next from '../../assets/IMG/next.svg'
+import Back from '../../assets/IMG/back.svg'
+
 const headers = {
   "Content-Type": "application/json"
 }
@@ -28,7 +31,7 @@ const Main = () => {
   const decidePage = () => {
     if(Page === true){
     return( <>
-        <HeaderPage position={""} onClickButton={onClickPage} />
+        <HeaderPage position={""} onClickButton={onClickPage} img={Next} />
         <ChoosePage 
           setNoPerson={setNoPerson}
           noPerson={noPerson}
@@ -36,7 +39,7 @@ const Main = () => {
       </>
     )} else {
       return ( <>
-          <HeaderPage position={"right"} onClickButton={onClickPage} />
+          <HeaderPage position={"right"} onClickButton={onClickPage} img={Back} />
           <MatchPage />
         </>
       )}
@@ -64,6 +67,7 @@ const Main = () => {
           {decidePage()}
           <Button variant='outlined' color='error' style={{margin: "5px"}} onClick={clear}>Limpar swipes e matches</Button>
 
+          {/* <img src={Next} alt="" /> */}
         </Container>
       </>
 

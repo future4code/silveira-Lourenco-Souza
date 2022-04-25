@@ -15,4 +15,14 @@ export const Img = styled.img`
 `
 export const Button = styled.button`
   ${(p) => p.position == "right" ?  "margin-right: auto" : "margin-left: auto"  };
+  width: 55px;
+  cursor: pointer;
+  padding: 1px 7px 1px 7px;
+  background-color: white;
+  border: none;
+    :hover{
+      
+    }
+  /* border: none; */
+  /* margin: 0 5px; */
 `
