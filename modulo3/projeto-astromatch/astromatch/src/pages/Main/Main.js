@@ -65,9 +65,8 @@ const Main = () => {
         <Container>
 
           {decidePage()}
-          <Button variant='outlined' color='error' style={{margin: "5px"}} onClick={clear}>Limpar swipes e matches</Button>
+          <Button variant='outlined' color='error' style={{margin: "10px"}} onClick={clear}>Limpar swipes e matches</Button>
 
-          {/* <img src={Next} alt="" /> */}
         </Container>
       </>
 

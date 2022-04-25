@@ -15,4 +15,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: lightgray;
+
+  @media screen and (max-device-width : 480px){
+    min-width: 500px;
+  }
 `

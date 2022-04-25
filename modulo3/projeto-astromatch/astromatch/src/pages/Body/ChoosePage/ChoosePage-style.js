@@ -21,13 +21,21 @@ export const ContainerLoading = styled.div`
     flex-grow: 1;
 `
 export const ContainerButton = styled.div`
-  border: dotted black 1px;
   display: flex;
   justify-content: space-between;
   `
 export const Button = styled.button`
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
+  margin: 10px 40px;
+  cursor: pointer;
+  font-size: 25px;
+  border-radius: 40px;
+    :hover{
+      transform: scale(1.2, 1.2);
+      background-color: lightgray;
+      color: white;
+    }
 `
 export const Img = styled.img`
   width: 100%;
