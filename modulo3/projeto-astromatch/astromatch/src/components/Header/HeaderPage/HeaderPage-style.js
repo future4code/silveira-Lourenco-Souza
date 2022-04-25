@@ -21,8 +21,8 @@ export const Button = styled.button`
   background-color: white;
   border: none;
     :hover{
-      
-    }
+      transform: scale(0.9, 0.9);
+    };
   /* border: none; */
   /* margin: 0 5px; */
 `
