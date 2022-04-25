@@ -9,6 +9,13 @@ export const Container = styled.div`
 export const ContainerPerson = styled.div`
     display: flex;
     flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    flex-grow: 1;
+`
+export const ContainerLoading = styled.div`
+  display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-grow: 1;

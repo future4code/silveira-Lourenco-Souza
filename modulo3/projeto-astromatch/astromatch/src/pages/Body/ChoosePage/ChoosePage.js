@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Like from '../../../components/Loading/Loading'
 
-import {Container, ContainerPerson, ContainerButton, Button, Img, DivParent, DivChild} from './ChoosePage-style'
+import {Container, ContainerPerson, ContainerButton, Button, Img, DivParent, DivChild, ContainerLoading} from './ChoosePage-style'
 
 import {BASE_URL} from '../../../constants/URL'
 
@@ -76,10 +76,10 @@ const ChoosePage = (props) => {
   const loadingTest = () => {
     if(loading){
       return (
-        <>
+        <ContainerLoading>
           <Like />
           <p>Carregando...</p>
-        </>
+        </ContainerLoading>
 
       )
     } else {
@@ -100,10 +100,10 @@ const ChoosePage = (props) => {
       return (
         <>
           <Container>
-            <ContainerPerson>
+            <ContainerLoading>
               <Like />
               <p>A sua lista de sugestões acabou...</p>
-            </ContainerPerson>
+            </ContainerLoading>
 
             <ContainerButton>
               <Button onClick={() => onClickNo()} disabled >No</Button>
