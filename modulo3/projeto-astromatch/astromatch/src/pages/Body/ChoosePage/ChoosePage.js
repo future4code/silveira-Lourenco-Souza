@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-import {Container, ContainerPerson, ContainerButton, Button, Img} from './ChoosePage-style'
+import {Container, ContainerPerson, ContainerButton, Button, Img, DivParent, DivChild} from './ChoosePage-style'
 
 import {BASE_URL} from '../../../constants/URL'
 
@@ -79,13 +79,13 @@ const ChoosePage = (props) => {
       )
     } else {
       return (  
-        <div>
+        <DivParent>
           <Img src={profile.photo} alt={`foto de ${profile.name}`} />
-          <div>
-            <p>{profile.name}</p>
-            <p>{profile.bio}</p>
-          </div>
-        </div>
+          <DivChild>
+            <p className='Name'><span>{`${profile.name}, `}</span>{profile.age}</p>
+            <p className='Info'>{profile.bio}</p>
+          </DivChild>
+        </DivParent>
       )
     }
   }
