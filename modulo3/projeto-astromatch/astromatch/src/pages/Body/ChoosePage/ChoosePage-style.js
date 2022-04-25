@@ -7,6 +7,10 @@ export const Container = styled.div`
   /* background-color: red; */
 `
 export const ContainerPerson = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
 `
 export const ContainerButton = styled.div`

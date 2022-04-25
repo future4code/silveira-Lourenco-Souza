@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import Like from '../../../components/Loading/Loading'
 
 import {Container, ContainerPerson, ContainerButton, Button, Img, DivParent, DivChild} from './ChoosePage-style'
 
@@ -75,7 +76,11 @@ const ChoosePage = (props) => {
   const loadingTest = () => {
     if(loading){
       return (
-        <p>Carregando...</p>
+        <>
+          <Like />
+          <p>Carregando...</p>
+        </>
+
       )
     } else {
       return (  
@@ -96,6 +101,7 @@ const ChoosePage = (props) => {
         <>
           <Container>
             <ContainerPerson>
+              <Like />
               <p>A sua lista de sugestões acabou...</p>
             </ContainerPerson>
 
