@@ -7,14 +7,18 @@ export const Container = styled.div`
   overflow: auto;
 `
 export const ContainerPerson = styled.div`
-  border: dotted 1px black;
+  /* border: dotted 1px black; */
   display: flex;
   align-items: center;
-  margin: 10px;
+  padding: 10px;
+    :hover{
+      background-color: lightgray;
+      cursor: pointer;
+    }
   `
 export const Img = styled.img`
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
   border-radius: 90px;
 `
 export const Name = styled.p`

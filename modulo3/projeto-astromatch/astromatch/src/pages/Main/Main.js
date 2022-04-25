@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import { BASE_URL } from '../../constants/URL'
 import { Container } from './Main-style'
+import Button from '@mui/material/Button';
+
 
 import MatchPage from '../Body/MatchPage/MatchPage'
 import ChoosePage from '../Body/ChoosePage/ChoosePage'
@@ -60,7 +62,7 @@ const Main = () => {
         <Container>
 
           {decidePage()}
-          <button onClick={clear}>Limpar</button>
+          <Button variant='outlined' color='error' style={{margin: "5px"}} onClick={clear}>Limpar swipes e matches</Button>
 
         </Container>
       </>
