@@ -7,6 +7,7 @@ const AdminHome = () => {
       <button>LogoutButton</button>
       <button>CreateTripPage</button>
       <button>TripDetails</button>
+      <hr />
     </div>
   )
 }
