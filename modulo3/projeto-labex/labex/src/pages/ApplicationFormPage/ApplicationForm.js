@@ -20,6 +20,8 @@ const ApplicationForm = () => {
           <option value="">Escolha um país:</option>
         </select>
         <button>Enviar</button>
+        <button>ListTripsPage(Voltar)</button>
+
       </div>
       <hr />
     </div>
