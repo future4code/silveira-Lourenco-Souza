@@ -1,11 +1,28 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const ApplicationForm = () => {
+
+  const navigate = useNavigate()
+
+  const goToHomePage = () => {
+    navigate("/")
+  }
+
+  const goToLoginPage = () => {
+    navigate("/login")
+  }
+
+  const goToListTripsPage = () => {
+    navigate("/trips/list")
+  }
+
   return (
     <div><h1>ApplicationForm</h1>
 
-      <button>HomePage</button>
-      <button>LoginPage</button>
+      <button onClick={goToHomePage} >HomePage</button>
+      <button onClick={goToLoginPage} >LoginPage</button>
 
       <h2>Inscrava-se para uma viagem</h2>
       <div>
@@ -20,7 +37,7 @@ const ApplicationForm = () => {
           <option value="">Escolha um país:</option>
         </select>
         <button>Enviar</button>
-        <button>ListTripsPage(Voltar)</button>
+        <button onClick={goToListTripsPage} >ListTripsPage(Voltar)</button>
 
       </div>
       <hr />

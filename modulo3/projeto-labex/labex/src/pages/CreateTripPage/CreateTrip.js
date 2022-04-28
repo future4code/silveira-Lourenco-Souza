@@ -1,9 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const CreateTrip = () => {
+
+  const navigate = useNavigate()
+
+
+  const goToAdiminHome = () => {
+    navigate("/admin/trips/list")
+  }
+
   return (
     <div> <h1>CreateTrip</h1 >
-      <button>AdminHomePage(Voltar)</button>
+      <button onClick={goToAdiminHome} >AdminHomePage(Voltar)</button>
 
       <h2>Criar Viajem</h2>
       <div>
