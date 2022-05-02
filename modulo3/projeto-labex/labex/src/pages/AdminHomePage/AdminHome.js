@@ -63,7 +63,7 @@ const AdminHome = () => {
       <button onClick={goToHomePage} >HomePage</button> {/* Provisório */}
       <button onClick={goToLoginPage} >LogoutButton</button> {/* Provisório */}
       <button onClick={goToCreateTripPage} >CreateTripPage</button>
-      
+
       {trips.length === 0 && <p>Carregando...</p>}
       {listaViagens}
     </div>

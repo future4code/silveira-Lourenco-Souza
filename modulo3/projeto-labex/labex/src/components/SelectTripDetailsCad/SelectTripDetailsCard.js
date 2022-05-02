@@ -23,8 +23,8 @@ const SelectTripDetailsCard = (props) => {
 
   const navigate = useNavigate()
 
-  const goToTripDetails = () => {
-    navigate(`/admin/trips/details/`)
+  const goToTripDetails = (value) => {
+    navigate(`/admin/trips/details/${value.id}`)
   }
 
   const teste2 = (e) => {

@@ -65,12 +65,9 @@ const Login = () => {
     <div> <h1>Login</h1 >
 
       <input type="text" placeholder='E-mail' value={email} onChange={inputEmail} />
-      <input type="text" placeholder='Senha' value={senha} onChange={inputSenha} />
+      <input type="password" placeholder='Senha' value={senha} onChange={inputSenha} />
       <button onClick={goToHomePage} >HomePage(Voltar)</button>
       <button onClick={sendLogin} >Entrar</button>
-
-      <p>{email}</p>
-      <p>{senha}</p>
 
     </div>
   )
