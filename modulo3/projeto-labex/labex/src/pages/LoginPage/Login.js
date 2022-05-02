@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { BASE_URL } from '../../constants/URL'
 
 
 const Login = () => {
@@ -19,8 +21,8 @@ const Login = () => {
 
   // ----------------------------------------------------------------------------
 
-  const [email, setEmail] = useState()
-  const [senha, setSenha] = useState()
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
 
   // ----------------------------------------------------------------------------
 
@@ -33,6 +35,29 @@ const Login = () => {
     setSenha(e.target.value)
   }
 
+  const sendLogin = () => {
+
+    const headers = {
+      "Content-Type": "application/json"
+    }
+
+    const body = {
+      email: email, 
+      password: senha
+    }
+
+    axios
+    .post(`${BASE_URL}/login`, body, headers)
+    .then((res) => {
+      console.log(res.data.token);
+      localStorage.setItem('token', res.data.token)
+      goToAdminHome()
+    })
+    .catch((err) => {
+      console.log(err.response.data.message);
+    })
+  }
+
   // ----------------------------------------------------------------------------
 
 
@@ -42,7 +67,7 @@ const Login = () => {
       <input type="text" placeholder='E-mail' value={email} onChange={inputEmail} />
       <input type="text" placeholder='Senha' value={senha} onChange={inputSenha} />
       <button onClick={goToHomePage} >HomePage(Voltar)</button>
-      <button onClick={goToAdminHome} >Entrar</button>
+      <button onClick={sendLogin} >Entrar</button>
 
       <p>{email}</p>
       <p>{senha}</p>
