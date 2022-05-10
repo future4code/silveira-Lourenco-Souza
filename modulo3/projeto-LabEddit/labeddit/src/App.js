@@ -5,16 +5,17 @@ import FeedPage from './pages/FeedPage/FeedPage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import PostDetailsPage from './pages/PostDetailsPage/PostDetailsPage'
 import SignupPage from './pages/SignupPage/SignupPage'
-import Header from './components/Header/Header'
+import TextBox from './components/TextBox/TextBox'
 
 const App = () => {
   return (
     <>
       <GlobalStyled />
+      <TextBox />
       {/* <FeedPage /> */}
       {/* <LoginPage /> */}
       {/* <PostDetailsPage /> */}
-      <SignupPage />
+      {/* <SignupPage /> */}
     </>
   )
 }
