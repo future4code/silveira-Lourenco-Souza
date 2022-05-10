@@ -11,9 +11,9 @@ const App = () => {
     <>
       <GlobalStyled />
       {/* <FeedPage /> */}
-      <LoginPage />
-      {/* <PostDetailsPage />
-      <SignupPage /> */}
+      {/* <LoginPage /> */}
+      {/* <PostDetailsPage /> */}
+      <SignupPage />
     </>
   )
 }
