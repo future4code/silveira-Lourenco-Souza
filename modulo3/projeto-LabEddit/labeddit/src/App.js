@@ -11,11 +11,10 @@ const App = () => {
   return (
     <>
       <GlobalStyled />
-      <Header />
       {/* <FeedPage /> */}
       {/* <LoginPage /> */}
       {/* <PostDetailsPage /> */}
-      {/* <SignupPage /> */}
+      <SignupPage />
     </>
   )
 }

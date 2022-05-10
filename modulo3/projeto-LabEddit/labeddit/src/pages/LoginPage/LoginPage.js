@@ -4,7 +4,6 @@ import { ContainerPage } from './LoginPage-styled'
 import Logo from "../../assets/images/LabEddit-Logo.png"
 
 
-
 const LoginPage = () => {
   return (
     <ContainerPage>

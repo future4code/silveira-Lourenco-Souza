@@ -8,7 +8,7 @@ import Logo from "../../assets/images/LabEddit-Logo.png"
 const Header = ({isLogged, PostPage}) => {
   return (
     <ContainerMain>
-      <button hidden={PostPage}>Voltar</button>
+      <button hidden={!PostPage}>Voltar</button>
       <img src={Logo} alt="Logo LabEddit" />
       <button>{isLogged ? "Logout" : "Login"}</button>
     </ContainerMain>
