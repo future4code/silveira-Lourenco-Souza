@@ -5,15 +5,17 @@ import FeedPage from './pages/FeedPage/FeedPage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import PostDetailsPage from './pages/PostDetailsPage/PostDetailsPage'
 import SignupPage from './pages/SignupPage/SignupPage'
+import Header from './components/Header/Header'
 
 const App = () => {
   return (
     <>
       <GlobalStyled />
+      <Header />
       {/* <FeedPage /> */}
       {/* <LoginPage /> */}
       {/* <PostDetailsPage /> */}
-      <SignupPage />
+      {/* <SignupPage /> */}
     </>
   )
 }
