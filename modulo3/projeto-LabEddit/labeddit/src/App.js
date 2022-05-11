@@ -6,12 +6,14 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import PostDetailsPage from './pages/PostDetailsPage/PostDetailsPage'
 import SignupPage from './pages/SignupPage/SignupPage'
 import TextBox from './components/TextBox/TextBox'
+import PostCard from './components/PostCard/PostCard'
 
 const App = () => {
   return (
     <>
       <GlobalStyled />
-      <TextBox />
+      <PostCard post />
+      {/* <TextBox /> */}
       {/* <FeedPage /> */}
       {/* <LoginPage /> */}
       {/* <PostDetailsPage /> */}
