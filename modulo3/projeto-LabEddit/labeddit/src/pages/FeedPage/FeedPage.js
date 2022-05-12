@@ -9,7 +9,7 @@ const FeedPage = () => {
     <div>
       <Header isLogged />
         <TextBox posting />
-        <PostCard />
+        <PostCard clickable />
     </div>
   )
 }

@@ -4,12 +4,22 @@ import { ContainerMain, Text, ContainerVotesAndComments, Container } from "./Pos
 import UpArrowOutlined from "../../assets/images/arrows/upArrowOutlined.svg"
 import DownArrowOutlined from "../../assets/images/arrows/downArrowOutlined.svg"
 import Comment from "../../assets/images/comment.svg"
+import { useNavigate } from 'react-router-dom'
+import { goToPostDetailsPage } from '../../routes/coordinator'
 
 
 
-const PostCard = ({post}) => {
+const PostCard = ({post, clickable}) => {
+
+  const navigate = useNavigate()
+
+  // const isclickable = (clickable) => {
+  //   const id = "asldkf"
+  //   return clickable ? goToPostDetailsPage(navigate, id) : ""
+  // }
+
   return (
-    <ContainerMain>
+    <ContainerMain onClick={clickable ? () => goToPostDetailsPage(navigate, "id") : undefined } >
       <span>Enviado por: username</span>
       <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos reiciendis harum ratione temporibus cupiditate iusto quidem vitae itaque ex.</Text>
       <ContainerVotesAndComments>

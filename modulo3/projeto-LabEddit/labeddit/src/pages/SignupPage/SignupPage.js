@@ -3,8 +3,13 @@ import React from 'react'
 import { ContainerMain } from './SignupPage-styled'
 
 import Header from '../../components/Header/Header'
+import { goToFeedPage } from '../../routes/coordinator'
+import {  useNavigate } from 'react-router-dom'
 
 const SignupPage = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
       <Header />
@@ -23,7 +28,7 @@ const SignupPage = () => {
               <input type="checkbox" id='sendEmail' />
               <label htmlFor="sendEmail">Eu concordo em receber emails sobre coisas legais no LabEddit</label>
             </div>
-            <button>Cadastrar</button>
+            <button onClick={() => goToFeedPage(navigate)}>Cadastrar</button>
           </div>
       </ContainerMain>
     </div>

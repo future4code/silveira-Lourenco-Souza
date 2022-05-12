@@ -24,4 +24,5 @@ export const ContainerVotesAndComments = styled.div`
 export const Container = styled.div`
   width: 70px;
   border: dotted black 1px;
+  /* display: flex; */
 `
