@@ -12,9 +12,9 @@ const App = () => {
   return (
     <>
       <GlobalStyled />
-      <PostCard post />
+      {/* <PostCard post /> */}
       {/* <TextBox /> */}
-      {/* <FeedPage /> */}
+      <FeedPage />
       {/* <LoginPage /> */}
       {/* <PostDetailsPage /> */}
       {/* <SignupPage /> */}
