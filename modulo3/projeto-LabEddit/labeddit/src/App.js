@@ -15,8 +15,8 @@ const App = () => {
       {/* <PostCard post /> */}
       {/* <FeedPage /> */}
       {/* <LoginPage /> */}
-      <PostDetailsPage />
-      {/* <SignupPage /> */}
+      {/* <PostDetailsPage /> */}
+      <SignupPage />
     </>
   )
 }
