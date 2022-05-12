@@ -15,14 +15,13 @@ export const Text = styled.p`
 `
 export const ContainerVotesAndComments = styled.div`
   display: flex;
+    /* div{
+      width: 70px;
+      border: dotted black 1px;
+      display: flex;
+    } */
 `
-export const ContainerVotes = styled.div`
+export const Container = styled.div`
   width: 70px;
   border: dotted black 1px;
-  display: flex;
-`
-export const ContainerComments = styled.div`
-  width: 70px;
-  border: dotted black 1px;
-  display: flex;
 `

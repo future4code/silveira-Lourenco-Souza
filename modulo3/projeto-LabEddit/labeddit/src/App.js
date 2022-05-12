@@ -13,10 +13,9 @@ const App = () => {
     <>
       <GlobalStyled />
       {/* <PostCard post /> */}
-      {/* <TextBox /> */}
-      <FeedPage />
+      {/* <FeedPage /> */}
       {/* <LoginPage /> */}
-      {/* <PostDetailsPage /> */}
+      <PostDetailsPage />
       {/* <SignupPage /> */}
     </>
   )
