@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { login } from '../../services/user'
 
 import { goToSignupPage } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
@@ -7,12 +9,15 @@ import useForm from '../../hooks/useForm'
 const LoginForm = () => {
 
   const [form, onChange, clear] = useForm({ email: "", password: "" })
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const navigate = useNavigate()
 
   const onSubmitForm = (event) => {
     event.preventDefault()
+    login(form, clear, setErrorMessage, navigate)
   }
-
-  const navigate = useNavigate()
+  
 
   return (
 
@@ -33,7 +38,9 @@ const LoginForm = () => {
         value={form.password} 
         onChange={onChange} 
       />
-      
+
+      <p>{errorMessage.length > 0 && errorMessage}</p>
+
       <div>
         <button type='submit' >Fazer Login</button>
         <button onClick={() => goToSignupPage(navigate)} >Crie uma conta!</button>

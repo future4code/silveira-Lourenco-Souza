@@ -4,10 +4,11 @@ import { ContainerMain } from './SignupPage-styled'
 
 import Header from '../../components/Header/Header'
 import SingupForm from './SingupForm'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
 const SignupPage = () => {
 
-  
+  useUnprotectedPage()
 
   return (
     <div>

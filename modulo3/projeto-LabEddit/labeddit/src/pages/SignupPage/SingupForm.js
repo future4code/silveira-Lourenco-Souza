@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 import useForm from '../../hooks/useForm'
+import { signup } from '../../services/user'
 
 const SingupForm = () => {
 
   const [form, onChange, clear] = useForm({ username: "", email: "", password: "" })
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const navigate = useNavigate()
 
   const onSubmitForm = (event) => {
     event.preventDefault()
+    signup(form, clear, setErrorMessage, navigate)
   }
+
 
   return (
     <form onSubmit={onSubmitForm}>
@@ -38,6 +45,7 @@ const SingupForm = () => {
         onChange={onChange} 
       />
 
+    <p>{errorMessage}</p>
 
       <div>
         <p>Ao continuar, você concorda com o nosso <span>Contrato de usuário</span> e nossa <span>Política de Privacidade</span></p>
