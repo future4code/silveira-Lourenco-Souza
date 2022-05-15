@@ -9,24 +9,24 @@ import { goToPostDetailsPage } from '../../routes/coordinator'
 
 
 
-const PostCard = ({post, clickable}) => {
+const PostCard = ({ post, clickable, username, body, voteSum, commentCount}) => {
 
   const navigate = useNavigate()
 
   return (
     <ContainerMain onClick={clickable ? () => goToPostDetailsPage(navigate, "id") : undefined } >
-      <span>Enviado por: username</span>
-      <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos reiciendis harum ratione temporibus cupiditate iusto quidem vitae itaque ex.</Text>
+      <span>Enviado por: {username}</span>
+      <Text>{body}</Text>
       <ContainerVotesAndComments>
         <Container>
           <img src={UpArrowOutlined} alt="/\" />
-          <p>1.2K</p> {/* Aqui vai as props de quantidade de likes */}
+          <p>{voteSum === null && 0}{voteSum}</p> {/* Aqui vai as props de quantidade de likes */}
           <img src={DownArrowOutlined} alt="\/" />
         </Container>
 
         <Container hidden={post} >
           <img src={Comment} alt="comments"/>
-          <p>132</p> {/* Aqui vai as props com a quantidade de comentários */}
+          <p>{commentCount === null && 0}{commentCount}</p> {/* Aqui vai as props com a quantidade de comentários */}
         </Container>
       </ContainerVotesAndComments>
     </ContainerMain>
