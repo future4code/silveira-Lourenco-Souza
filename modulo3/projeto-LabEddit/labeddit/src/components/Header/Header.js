@@ -15,7 +15,7 @@ const Header = ({isLogged, postPage}) => {
     <ContainerMain>
       <button hidden={!postPage} onClick={() => goToFeedPage(navigate)}>Voltar</button>
       <img src={Logo} alt="Logo LabEddit" />
-      <button onClick={isLogged ? () => goToHomePage(navigate) : () => goToLoginPage(navigate)}>{isLogged ? "Logout" : "Login"}</button>
+      <button onClick={() => goToHomePage(navigate)}>{isLogged ? "Logout" : "Login"}</button>
     </ContainerMain>
   )
 }

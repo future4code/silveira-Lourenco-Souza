@@ -15,9 +15,9 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage />} />
+        {/* <Route index element={<HomePage />} /> */}
         <Route path='/post' element={<FeedPage />} />
-        <Route path='/login' element={<LoginPage/>} />
+        <Route index element={<LoginPage/>} />
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/post/:id' element={<PostDetailsPage/>} />
         <Route path="*" element={<ErrorPage/>} />
