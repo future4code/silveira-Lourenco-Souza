@@ -11,7 +11,7 @@ const FeedPage = () => {
 
   return (
     <div>
-      <Header isLogged />
+      <Header />
         <TextBox posting />
         <PostCard clickable />
     </div>

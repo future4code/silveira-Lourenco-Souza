@@ -11,7 +11,7 @@ const PostDetailsPage = () => {
 
   return (
     <div>
-      <Header isLogged postPage/>
+      <Header postPage/>
       <PostCard />
       <TextBox />
       <PostCard post/>

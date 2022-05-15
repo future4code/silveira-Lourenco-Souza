@@ -4,10 +4,18 @@ import { ContainerPage } from './LoginPage-styled'
 import Logo from "../../assets/images/LabEddit-Logo.png"
 import LoginForm from './LoginForm'
 import useUnprotectedPage from '../../hooks/useUnprotectedPage'
-// import Header from '../../components/Header/Header'
+
+import { goToSignupPage } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 
 const LoginPage = () => {
+
+  const navigate = useNavigate()
+
 
   useUnprotectedPage()
 
@@ -21,6 +29,8 @@ const LoginPage = () => {
         </div>
 
         <LoginForm />
+
+        <button onClick={() => goToSignupPage(navigate)} >Crie uma conta!</button>
 
       </ContainerPage>
     </div>

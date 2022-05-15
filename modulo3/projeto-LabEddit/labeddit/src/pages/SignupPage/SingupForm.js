@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { signup } from '../../services/user'
 
 import useForm from '../../hooks/useForm'
-import { signup } from '../../services/user'
 
 const SingupForm = () => {
 

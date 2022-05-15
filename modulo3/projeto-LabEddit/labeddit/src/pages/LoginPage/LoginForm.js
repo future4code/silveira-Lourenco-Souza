@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { login } from '../../services/user'
 
-import { goToSignupPage } from '../../routes/coordinator'
-import { useNavigate } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
 
 const LoginForm = () => {
@@ -43,7 +42,6 @@ const LoginForm = () => {
 
       <div>
         <button type='submit' >Fazer Login</button>
-        <button onClick={() => goToSignupPage(navigate)} >Crie uma conta!</button>
       </div>
     </form>
   )
