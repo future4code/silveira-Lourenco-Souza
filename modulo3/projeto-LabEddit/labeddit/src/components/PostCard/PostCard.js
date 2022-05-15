@@ -13,11 +13,6 @@ const PostCard = ({post, clickable}) => {
 
   const navigate = useNavigate()
 
-  // const isclickable = (clickable) => {
-  //   const id = "asldkf"
-  //   return clickable ? goToPostDetailsPage(navigate, id) : ""
-  // }
-
   return (
     <ContainerMain onClick={clickable ? () => goToPostDetailsPage(navigate, "id") : undefined } >
       <span>Enviado por: username</span>
