@@ -13,7 +13,6 @@ export const login = (body, clear, setErrorMessage, navigate) => {
       goToFeedPage(navigate)
     })
     .catch((err) => {
-      console.log(err.response.data);
       setErrorMessage(err.response.data)
       if (err.response.data.message.length > 0) {
         setErrorMessage("Senha deve possuir no mínimo 8 e no máximo 30 caracteres")
@@ -31,7 +30,6 @@ export const signup = (body, clear, setErrorMessage, navigate) => {
     goToFeedPage(navigate)
   })
   .catch((err) => {
-    console.log(err);
     if (err.response.data.message.length > 0) {
       setErrorMessage("Senha deve possuir no mínimo 8 e no máximo 30 caracteres")
     }
