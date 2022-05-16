@@ -9,12 +9,12 @@ import { goToPostDetailsPage } from '../../routes/coordinator'
 
 
 
-const PostCard = ({ post, clickable, username, body, voteSum, commentCount}) => {
+const PostCard = ({ post, clickable, username, body, voteSum, commentCount, id}) => {
 
   const navigate = useNavigate()
 
   return (
-    <ContainerMain onClick={clickable ? () => goToPostDetailsPage(navigate, "id") : undefined } >
+    <ContainerMain onClick={clickable ? () => goToPostDetailsPage(navigate, id) : undefined } >
       <span>Enviado por: {username}</span>
       <Text>{body}</Text>
       <ContainerVotesAndComments>

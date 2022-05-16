@@ -16,7 +16,6 @@ const useRequestData = (initialData, url) => {
       }
     })
     .then((res) => {
-      console.log(res);
       setData(res.data)
     })
     .catch((err) => {
