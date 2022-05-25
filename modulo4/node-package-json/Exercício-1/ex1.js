@@ -7,6 +7,13 @@
 const nome = process.argv[2]
 const idade = +process.argv[3]
 
-console.log(`Olá, ${nome}! Você tem ${idade} anos. Em sete anos você terá ${idade + 7}`);
+if (!nome) {
+  console.log("Esperava 2 parâmetros não recebi nenhum.");
+} else if(!idade){
+  console.log("Esperava 2 parâmetros só recebi um.");
+} else {
+  console.log(`Olá, ${nome}! Você tem ${idade} anos. Em sete anos você terá ${idade + 7}`);
+}
+
 
 // ---------------------------------------------------------------------------------------------------
