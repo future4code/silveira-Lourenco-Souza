@@ -8,11 +8,11 @@ const nome = process.argv[2]
 const idade = +process.argv[3]
 
 if (!nome) {
-  console.log("Esperava 2 parâmetros não recebi nenhum.");
-} else if(!idade){
-  console.log("Esperava 2 parâmetros só recebi um.");
+  console.log("\x1b[31m", "Esperava 2 parâmetros não recebi nenhum.");
+} else if (isNaN(idade)){
+  console.log("\x1b[31m", "Esperava 2 parâmetros só recebi um.");
 } else {
-  console.log(`Olá, ${nome}! Você tem ${idade} anos. Em sete anos você terá ${idade + 7}`);
+  console.log("\x1b[32m", `Olá, ${nome}! Você tem ${idade} anos. Em sete anos você terá ${idade + 7}!`);
 }
 
 
