@@ -1,0 +1,15 @@
+{
+  "name": "aprofundamento-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear",
+    "start1": "clear && tsc && node ./build/exercicioUm.js",
+    "start2": "clear && tsc && node ./build/exercicioDois.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Heber",
+  "license": "ISC"
+}
