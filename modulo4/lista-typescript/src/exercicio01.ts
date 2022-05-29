@@ -50,8 +50,7 @@ const personInfo = (name: string, date: string): string => {
   return `Olá me chamo ${name}, nasci no dia ${day} do mês de ${converterMonth(month)} do ano de ${year}`
 }
 
-console.log(personInfo("Lourenço", "01/02/1996"));
+let nome: string = process.argv[2]
+let data: string = process.argv[3]
 
-// lastIndexOf
-// indexOf
-//slice
+console.log(personInfo(nome, data));
