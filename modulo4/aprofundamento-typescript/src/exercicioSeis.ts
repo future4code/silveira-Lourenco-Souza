@@ -28,4 +28,3 @@ const findEra = (year: number, age?: string): string => {
   }
 
   console.log(findEra(0));
-  
