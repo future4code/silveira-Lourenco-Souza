@@ -8,6 +8,7 @@
     "start2": "clear && tsc && node ./build/exercicio02.js",
     "start3": "clear && tsc && node ./build/exercicio03.js",
     "start4": "clear && tsc && node ./build/exercicio04.js",
+    "start5": "clear && tsc && node ./build/exercicio05.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
