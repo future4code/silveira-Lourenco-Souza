@@ -6,6 +6,7 @@
   "scripts": {
     "start1": "clear && tsc && node ./build/exercicio01.js",
     "start2": "clear && tsc && node ./build/exercicio02.js",
+    "start3": "clear && tsc && node ./build/exercicio03.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
