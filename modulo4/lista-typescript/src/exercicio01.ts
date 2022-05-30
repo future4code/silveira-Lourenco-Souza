@@ -17,34 +17,22 @@ const personInfo = (name: string, date: string): string => {
   }
 
   const converterMonth = (month: number): string => {
-    switch(month){
-      case 1:
-        return "janeiro"
-      case 2:
-        return "fevereiro"
-      case 3:
-        return "março"
-      case 4:
-        return "abril"
-      case 5:
-        return "maio"
-      case 6:
-        return "junho"
-      case 7:
-        return "julho"
-      case 8:
-        return "agosto"
-      case 9:
-        return "setembro"
-      case 10:
-        return "outubro"
-      case 11:
-        return "novembro"
-      case 12:
-        return "dezembro"
-      default:
-        return "Erro"
-    }
+    const monthList: string[] = [
+      "janeiro",
+      "fevereiro",
+      "março",
+      "abril",
+      "maio",
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "dezembro"
+    ]
+
+    return monthList[month - 1]
   }
 
   return `Olá me chamo ${name}, nasci no dia ${day} do mês de ${converterMonth(month)} do ano de ${year}`
