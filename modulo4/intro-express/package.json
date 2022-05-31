@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "clear && tsc && node ./build/introExpress.js",
     "start1": "clear && tsc && node ./build/exercicio01.js",
     "start2": "clear && tsc && node ./build/exercicio02.js",
     "start3": "clear && tsc && node ./build/exercicio03.js",
