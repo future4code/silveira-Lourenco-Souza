@@ -68,13 +68,13 @@ app.post("/addtask", (req: Request, res: Response) => {
 
       if(verifyId.length !== 0){
 
-        res.status(200).send("tarefa já existe")
+        res.status(200).send({message: "tarefa já existe"})
       } else {
 
         const output: todo[] = [...allData, task]
         allData = output
 
-        res.status(200).send("tarefa adicionada")
+        res.status(200).send({message: "tarefa adicionada"})
       }
 })
 
@@ -124,7 +124,14 @@ app.get("/user/:id", (req: Request, res: Response) => {
     return id.userId === user
   })
 
-  res.status(200).send({ response: output })
+  const outputRemaining: todo[] = allData.filter((id) => {
+    return id.userId !== user
+  })
+
+  res.status(200).send({ todos: {
+    selectedUser: output,
+    others: outputRemaining
+  } })
 
 })
 
