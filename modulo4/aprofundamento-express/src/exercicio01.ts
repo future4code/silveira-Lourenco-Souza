@@ -94,6 +94,40 @@ app.post("/changevalue/:id", (req: Request, res: Response) => {
 
 })
 
+//-------------------------------------------------------------------------------------------------------------------
+
+app.delete("/deletetask/:id", (req: Request, res: Response) => {
+  
+  const task: number = +req.params.id
+
+  const output: todo[] = allData.filter((id) => {
+    return id.id !== task
+  })
+
+  if(output.length === allData.length){
+    res.status(200).send({ message: "Tarefa não existe" })
+  } else {
+
+    allData = output
+
+    res.status(200).send({ message: "Tarefa deletada com sucesso" })
+  }
+})
+
+//-------------------------------------------------------------------------------------------------------------------
+
+app.get("/user/:id", (req: Request, res: Response) => {
+  
+  const user: number = +req.params.id
+
+  const output: todo[] = allData.filter((id) => {
+    return id.userId === user
+  })
+
+  res.status(200).send({ response: output })
+
+})
+
 //##################################################################################################################
 
 app.listen(3003, () => {
