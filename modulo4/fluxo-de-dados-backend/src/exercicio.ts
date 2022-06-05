@@ -23,13 +23,48 @@ app.get("/test", (req: Request, res: Response) => {
 
 app.post("/produto", (req: Request, res: Response) => {
   
-  const novoProduto: produto = { id: Date.now().toString(), ...req.body}
-  
-  const output: produto[] = [...carrinho, novoProduto]
-  carrinho = output
 
-  res.status(200).send(carrinho)  
+  try{
 
+    if(!req.body.name && !req.body.price){
+      res.statusCode = 400
+      throw new Error("Nenhum valor inserido")
+    }
+    if(!req.body.name){
+      res.statusCode = 400
+      throw new Error("O valor nome do produto está faltando. Insira um valor válido.")
+    }
+    if (!req.body.price){
+      res.statusCode = 400
+      throw new Error("O valor preço do produto está faltando. Insira um valor válido.")
+    }
+    if (req.body.name && typeof req.body.name !== "string"){
+      res.statusCode = 400
+      throw new Error("Insira um valor de nome válido.")
+    }
+    if (req.body.price && typeof req.body.price !== "number"){
+      res.statusCode = 400
+      throw new Error("Insira um valor de preço válido.")
+    }
+    if (req.body.price && req.body.price < 0){
+      res.statusCode = 400
+      throw new Error("Valor de preço não pode ser zero ou menor")
+    }
+
+    const novoProduto: produto = { id: Date.now().toString(), ...req.body }
+
+    const output: produto[] = [...carrinho, novoProduto]
+    carrinho = output
+
+    res.status(200).send(carrinho)  
+
+  } catch(err: any) {
+    if(res.statusCode === 200){
+      res.status(500).send("Erro inesperado")
+    } else {
+      res.send(err.message)
+    }
+  }  
 })
 
 //------------------------------------------------------------------------------------------------
