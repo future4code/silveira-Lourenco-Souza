@@ -7,17 +7,17 @@ export type produto = {
 export const dados: produto[] = 
 [
   {
-    id: "UZeZo",
+    id: "1654387312852",
     name: "Carne",
     price: 60
   },
   {
-    id: "25cil",
+    id: "1654387336297",
     name: "Pizza",
     price: 20
   },
   {
-    id: "Jn0aX",
+    id: "1654387349401",
     name: "Hsmbúrger",
     price: 10
   }
