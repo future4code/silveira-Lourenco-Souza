@@ -18,7 +18,7 @@ export const dados: produto[] =
   },
   {
     id: "1654387349401",
-    name: "Hsmbúrger",
+    name: "Hambúrger",
     price: 10
   }
 ]

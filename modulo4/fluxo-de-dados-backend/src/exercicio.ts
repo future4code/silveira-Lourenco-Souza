@@ -41,7 +41,21 @@ app.get("/produtos", (req: Request, res: Response) => {
 
 //------------------------------------------------------------------------------------------------
 
+app.put("/produto", (req: Request, res: Response) => {
+  
+  const input: {id: string, price: number} = req.body
+  
+  const modifyPrice: produto[] = carrinho.filter((produto) => {
+    if(produto.id === input.id){
+      produto.price = input.price
+    }
+    return produto
+  })
 
+  carrinho = modifyPrice
+  
+  res.status(200).send(carrinho)
+})
 
 //##########################################################################################################################
 
