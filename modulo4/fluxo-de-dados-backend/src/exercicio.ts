@@ -53,8 +53,24 @@ app.put("/produto", (req: Request, res: Response) => {
   })
 
   carrinho = modifyPrice
-  
+
   res.status(200).send(carrinho)
+})
+
+//------------------------------------------------------------------------------------------------
+
+app.delete("/produto", (req: Request, res: Response) => {
+  
+  const input: {id: string} = req.body
+
+  const novoCarrinho: produto[] = carrinho.filter((produto) => {
+    return produto.id !== input.id
+  })
+  
+  carrinho = novoCarrinho
+
+  res.status(200).send(carrinho)
+  
 })
 
 //##########################################################################################################################
