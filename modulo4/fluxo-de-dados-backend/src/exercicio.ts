@@ -27,15 +27,15 @@ app.post("/produto", (req: Request, res: Response) => {
   try{
 
     if(!req.body.name && !req.body.price){
-      res.statusCode = 400
+      res.statusCode = 422
       throw new Error("Nenhum valor inserido")
     }
     if(!req.body.name){
-      res.statusCode = 400
+      res.statusCode = 422
       throw new Error("O valor nome do produto está faltando. Insira um valor válido.")
     }
-    if (!req.body.price){
-      res.statusCode = 400
+    if (isNaN(req.body.prece)){
+      res.statusCode = 422
       throw new Error("O valor preço do produto está faltando. Insira um valor válido.")
     }
     if (req.body.name && typeof req.body.name !== "string"){
