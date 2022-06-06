@@ -77,19 +77,49 @@ app.get("/produtos", (req: Request, res: Response) => {
 //------------------------------------------------------------------------------------------------
 
 app.put("/produto", (req: Request, res: Response) => {
-  
-  const input: {id: string, price: number} = req.body
-  
-  const modifyPrice: produto[] = carrinho.filter((produto) => {
-    if(produto.id === input.id){
-      produto.price = input.price
+
+  try{
+
+    const { id, price } = req.body
+
+    if(!id){
+      res.statusCode = 422
+      throw new Error("Valor de id não recebido.")
     }
-    return produto
-  })
+    if(price && typeof price !== "number"){
+      res.statusCode = 422
+      throw new Error("Valor de preço não recebido de forma numérica.")
+    }
+    if(price === undefined || price === false){
+      res.statusCode = 422
+      throw new Error("Valor de preço não recebido.")
+    }
+    if(price <= 0){
+      res.statusCode = 422
+      throw new Error("O valor de preço não pode ser igual a zero ou inferior.")
+    }
 
-  carrinho = modifyPrice
+    const modifyPrice: produto[] = carrinho.filter((produto) => {
+      if (produto.id === id) {
+        produto.price = price
+      }
+      return produto
+    })  
 
-  res.status(200).send(carrinho)
+    carrinho = modifyPrice
+    
+
+    res.status(200).send(carrinho)
+
+  } catch(err: any){
+    if (res.statusCode === 200) {
+      res.status(500).send("Erro inesperado")
+    } else {
+      res.send({message: err.message})
+    }
+  }
+  
+  
 })
 
 //------------------------------------------------------------------------------------------------
