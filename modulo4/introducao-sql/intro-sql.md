@@ -1,3 +1,4 @@
+USE `silveira-21814704-lourenco-souza`;
 
 -- Exercício 1
 CREATE TABLE Actor (
@@ -204,3 +205,77 @@ CREATE TABLE Movies (
     release_Date DATE NOT NULL,
     rating INT NOT NULL
 );
+
+DESCRIBE Movies;
+
+INSERT INTO Movies (id, title, synopsis, release_Date, rating)
+VALUES (
+	"001",
+    "Se Eu Fosse Você",
+    "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos.",
+    "2006-01-06",
+    "7"
+);
+
+INSERT INTO Movies
+VALUES(
+	"002",
+    "Doce de mãe",
+    "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+    "2012-12-27",
+    "10"
+);
+
+INSERT INTO Movies
+VALUES(
+	"003",
+    "Dona Flor e Seus Dois Maridos",
+    "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+    "2017-11-02",
+    "8"
+);
+
+INSERT INTO Movies
+VALUES(
+	"003",
+    "Dona Flor e Seus Dois Maridos",
+    "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+    "2017-11-02",
+    "8"
+);
+
+INSERT INTO Movies
+VALUES(
+	"004",
+    "Os Trombadinhas",
+    "Em São Paulo, um empresário quer reabilitar as crianças de rua, chamadas de 'trombadinhas', através de um projeto social. Depois de ser desencorajado pela própria polícia, busca a ajuda do treinador do time juvenil do Santos Futebol Clube.",
+    "1979-01-01",
+    "10"
+);
+
+-- ############################################################################################################################################################################
+-- Exercício 6
+
+SELECT id, title, rating FROM Movies
+WHERE id = "002";
+
+SELECT * FROM Movies
+WHERE title = "doce de mãe";
+
+SELECT id, title, synopsis FROM Movies
+WHERE rating >= 7;
+
+-- ############################################################################################################################################################################
+-- Exercício 7
+
+SELECT * FROM Movies
+WHERE title LIKE "%vida%";
+
+SELECT * FROM Movies
+WHERE title OR synopsis LIKE "%anos%";
+
+SELECT * FROM Movies
+WHERE release_Date < "2022-06-07";
+
+SELECT * FROM Movies
+WHERE release_Date < "2022-06-07" AND (title OR synopsis LIKE "%anos%") AND rating > 7;
