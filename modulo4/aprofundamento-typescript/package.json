@@ -1,0 +1,24 @@
+{
+  "name": "aprofundamento-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear",
+    "start1": "clear && tsc && node ./build/exercicioUm.js",
+    "start2": "clear && tsc && node ./build/exercicioDois.js",
+    "start3": "clear && tsc && node ./build/exercicioTres.js",
+    "start4": "clear && tsc && node ./build/exercicioQuatro.js",
+    "start5": "clear && tsc && node ./build/exercicioCinco.js",
+    "start6": "clear && tsc && node ./build/exercicioSeis.js",
+    "start7": "clear && tsc && node ./build/exercicioSete.js",
+    "start8": "clear && tsc && node ./build/lastChallenge/exercicioOito.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Heber",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^17.0.36"
+  }
+}
