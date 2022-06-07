@@ -1,0 +1,23 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start1": "clear && tsc && node ./build/exercicioUm.js",
+    "start2": "clear && tsc && node ./build/exercicioDois.js",
+    "start3": "clear && tsc && node ./build/exercicioTres.js",
+    "start4": "clear && tsc && node ./build/exercicioQuatro.js",
+    "start5": "clear && tsc && node ./build/exercicioCinco.js",
+    "start6": "clear && tsc && node ./build/desafioExercicioSeis.js",
+    "start7": "clear && tsc && node ./build/desafioExercicioSete.js",
+    "start8": "clear && tsc && node ./build/desafioExercicioOito.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.35"
+  }
+}
