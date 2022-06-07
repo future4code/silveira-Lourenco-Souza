@@ -1,0 +1,1 @@
+console.log("Bem-Vindo aos exercícios de Node.js e Package.json");
