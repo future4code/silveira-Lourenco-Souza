@@ -125,3 +125,39 @@ WHERE id = "001";
 -- 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0
 -- O comando é lido mas não faz alteração nenhuma.
 
+-- ############################################################################################################################################################################
+-- Exercício 7
+
+SELECT COUNT(*) FROM Movies
+WHERE rating > 7.5;
+
+SELECT AVG(rating) FROM Movies;
+
+SELECT COUNT(*) FROM Movies
+WHERE playing_limit_date > CURDATE();
+
+SELECT COUNT(*) FROM Movies
+WHERE release_Date > CURDATE();
+
+SELECT MAX(rating) FROM Movies;
+
+SELECT MIN(rating) FROM Movies;
+
+-- ############################################################################################################################################################################
+-- Exercício 7
+
+SELECT * FROM Movies
+ORDER BY title;
+
+SELECT * FROM Movies
+ORDER BY title DESC
+LIMIT 5;
+
+SELECT * FROM Movies
+WHERE release_Date < CURDATE()
+ORDER BY release_Date DESC
+LIMIT 3;
+
+SELECT * FROM Movies
+ORDER BY rating DESC
+LIMIT 3;
