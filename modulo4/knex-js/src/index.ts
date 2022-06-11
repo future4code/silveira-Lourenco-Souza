@@ -280,6 +280,27 @@ app.get("/movie/all", async (req: Request, res: Response) => {
 
 // ---------------------------------------------------------------------------------
 
+const searchMovies = async (search: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT * FROM Movies
+    WHERE title LIKE "%${search}%" OR synopsis LIKE "%${search}%"
+  `)
+
+  return result[0]
+}
+
+app.get("/movie", async (req: Request, res: Response) => {
+
+  try {
+
+    const result = await searchMovies(req.query.search as string)
+
+    res.send({ message: result })
+
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+})
 
 //################################################################################################
 
