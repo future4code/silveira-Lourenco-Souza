@@ -51,13 +51,13 @@ const getGenderQuant = async (gender: string): Promise<any> => {
   return result[0][0]
 }
 
-getGenderQuant("female")
-.then((res) => {
-  console.table(res);  
-})
-.catch((err) => {
-  console.log(err);
-})
+// getGenderQuant("female")
+// .then((res) => {
+//   console.table(res);  
+// })
+// .catch((err) => {
+//   console.log(err);
+// })
 
 app.get("/users/:id", async (req: Request, res: Response) => {
   try{
@@ -72,6 +72,105 @@ app.get("/users/:id", async (req: Request, res: Response) => {
 
 
 // a) A resposta do banco de dados usando um raw vem no formato de um array dentro de outro array.
+
+// ---------------------------------------------------------------------------------
+
+  const createActor = async (
+    id: string,
+    name: string,
+    salary: number,
+    dateOfBirth: Date,
+    gender: string
+  ) : Promise <void> => {
+    await connection
+      .insert({
+        id,
+        name,
+        salary,
+        birth_date: dateOfBirth,
+        gender
+      })
+        .into("Actor")
+  }
+
+  app.post("/user", async (req: Request, res: Response) => {
+
+    try{
+
+      const { id, name, salary, dateOfBirth, gender } = req.body
+
+      await createActor(id, name, salary, dateOfBirth, gender)
+
+      res.send({message: "usuário criado"})
+
+    } catch (err: any) {
+      res.status(500).send({ message: err.message })
+    }
+
+  })
+
+  // ------------------
+
+// const getActors = async (): Promise <void> => {
+//   await connection("Actor")
+//   }  
+
+app.get("/users", async (req: Request, res: Response) => {
+  try {
+
+    const resultado = await connection("Actor")
+
+    res.send({ message: resultado})
+
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+
+})
+
+  // ------------------
+
+app.put("/user", async (req: Request, res: Response) => {
+
+  const {id, salary} = req.body
+
+  try {
+    await connection("Actor")
+      .update({
+        salary
+      })
+      .where({id})
+
+    res.send({ id: id })
+
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+})
+
+  // ------------------
+
+
+
+  // ------------------
+
+app.get("/users/:gender/salary", async (req: Request, res: Response) => {
+
+  const gender = req.params.gender
+
+  try {
+    await connection("Actor")
+      .count()
+      .where({ gender })
+
+    res.send({ gender: gender })
+
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+})
+
+// ---------------------------------------------------------------------------------
 
 //################################################################################################
 
