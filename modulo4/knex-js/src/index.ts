@@ -130,6 +130,15 @@ app.get("/users", async (req: Request, res: Response) => {
 
   // ------------------
 
+  const updateSalary = async (
+    id: string,
+    salary: number
+  ): Promise<any> => {
+    await connection("Actor")
+      .update({salary})
+      .where({id})
+  }
+
 app.put("/user", async (req: Request, res: Response) => {
 
   const {id, salary} = req.body
@@ -150,9 +159,21 @@ app.put("/user", async (req: Request, res: Response) => {
 
   // ------------------
 
-
+  const deleteActor = async (id: string): Promise<void> => {
+    await connection("Actor")
+      .delete()
+      .where({id})
+  }
 
   // ------------------
+
+  const avgSalaryByGender = async (gender:string): Promise<any> => {
+    const result = await connection("Actor")
+      .avg("salary as average")
+      .where({gender})
+
+      return result[0].average
+  }
 
 app.get("/users/:gender/salary", async (req: Request, res: Response) => {
 
