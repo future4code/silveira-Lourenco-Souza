@@ -255,6 +255,32 @@ app.post("/movie", async (req: Request, res: Response) => {
   }
 })
 
+// ---------------------------------------------------------------------------------
+
+const getAllMovies = async (): Promise <any> => {
+  const result = await connection.raw(`
+    SELECT * FROM Movies LIMIT 15
+  `)
+  
+  return result[0]
+}
+
+app.get("/movie/all", async (req: Request, res: Response) => {
+  
+  try {
+
+    const result = await getAllMovies()
+
+    res.send({message: result})
+
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+})
+
+// ---------------------------------------------------------------------------------
+
+
 //################################################################################################
 
 const server = app.listen(process.env.PORT || 3003, () => {
