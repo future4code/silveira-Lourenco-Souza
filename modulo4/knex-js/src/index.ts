@@ -99,7 +99,7 @@ app.get("/users/:id", async (req: Request, res: Response) => {
 
       const { id, name, salary, dateOfBirth, gender } = req.body
 
-      await createActor(id, name, salary, dateOfBirth, gender)
+      await createActor(id, name, salary, new Date(dateOfBirth), gender)
 
       res.send({message: "usuário criado"})
 
@@ -144,11 +144,7 @@ app.put("/user", async (req: Request, res: Response) => {
   const {id, salary} = req.body
 
   try {
-    await connection("Actor")
-      .update({
-        salary
-      })
-      .where({id})
+    await updateSalary(id, salary)
 
     res.send({ id: id })
 
@@ -164,6 +160,17 @@ app.put("/user", async (req: Request, res: Response) => {
       .delete()
       .where({id})
   }
+
+  app.delete("/actor/:id", async (req: Request, res: Response) => {
+    try{
+      await deleteActor(req.params.id)
+
+      res.send({message: "deletado com sucesso"})
+
+    } catch (err: any) {
+      res.status(500).send({ message: err.message })
+    }
+  })
 
   // ------------------
 
