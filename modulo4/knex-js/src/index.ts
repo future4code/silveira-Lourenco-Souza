@@ -221,6 +221,40 @@ app.get("/actor?gender=", async (req: Request, res: Response) => {
 
 // ---------------------------------------------------------------------------------
 
+const createMovie = async (
+  id: string,
+  title: string,
+  synopsis: string,
+  releaseDate: Date,
+  playingLimitDate: Date,
+  rating: number
+): Promise<void> => {
+  await connection
+    .insert({
+      id,
+      title,
+      synopsis,
+      release_Date: releaseDate,
+      playing_limit_date: playingLimitDate,
+      rating
+    })
+    .into("Movies")
+}
+
+app.post("/movie", async (req: Request, res: Response) => {
+
+  try {
+    const { id, title, synopsis, releaseDate, playingLimitDate, rating } = req.body
+
+    await createMovie(id, title, synopsis, releaseDate, playingLimitDate, rating)
+
+    res.send({message: "Filme criado!"})
+
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+})
+
 //################################################################################################
 
 const server = app.listen(process.env.PORT || 3003, () => {
