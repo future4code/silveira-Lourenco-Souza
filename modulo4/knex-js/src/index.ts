@@ -193,6 +193,27 @@ app.get("/users/:gender/salary", async (req: Request, res: Response) => {
 
 // ---------------------------------------------------------------------------------
 
+// const getActorByGender = async (gender: string): Promise<any> => {
+//   const result = await connection("Actor")
+//     .where({ gender })
+
+//   return result[0]
+// }
+
+app.get("/actor?gender=", async (req: Request, res: Response) => {
+  try {
+    const gender = req.query.gender as string
+    const actor = await avgSalaryByGender(gender)
+
+    res.send({ gender: actor })
+    
+  } catch (err: any) {
+    res.status(500).send({ message: err.message })
+  }
+})
+
+// ---------------------------------------------------------------------------------
+
 //################################################################################################
 
 const server = app.listen(process.env.PORT || 3003, () => {
