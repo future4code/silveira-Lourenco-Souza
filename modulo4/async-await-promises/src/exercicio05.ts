@@ -15,7 +15,7 @@ const sendNotifications = async (users: user[], message: string): Promise<any> =
   try {
 
     for (const user of users) {
-      axios.post(`${BASE_URL}/notifications`, {
+      await axios.post(`${BASE_URL}/notifications`, {
         subscriberId: user.id,
         message
       })
