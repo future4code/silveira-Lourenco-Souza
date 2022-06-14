@@ -1,11 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "./constants/url";
-
-type news = {
-  title:string,
-  content: string,
-  date: number
-}
+import { news } from "./constants/types";
 
 // a) A tipagem está aqui em cima
 
@@ -16,7 +11,7 @@ const body: news = {
 }
 
 const createNews = async (body: news): Promise<void> => {
-  
+
   try {
     await axios.put(`${BASE_URL}/news`, body)
     

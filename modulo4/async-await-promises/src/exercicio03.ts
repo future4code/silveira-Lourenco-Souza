@@ -1,11 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "./constants/url";
-
-type user = {
-  id: string,
-  name: string,
-  email: string
-}
+import { user } from "./constants/types";
 
 // a) Não.
 // b) É sempre melhor usar o any o menos possível
