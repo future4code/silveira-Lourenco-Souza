@@ -12,8 +12,15 @@ type user = {
 
 const getSuscribes = async (): Promise<user[]> => {
 
-  const result = await axios.get(`${BASE_URL}/subscribers`)
-  return result.data
+  const response = await axios.get(`${BASE_URL}/subscribers`)
+  return response.data.map((res: any) => {
+    const {id, name, email} = res
+    return {
+      id,
+      name,
+      email
+    }
+  })
 }
 
 getSuscribes()
