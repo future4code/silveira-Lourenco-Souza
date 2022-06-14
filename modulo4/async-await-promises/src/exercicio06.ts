@@ -1,3 +1,6 @@
+// a) Promise All faz com que os awaits sejam executados de forma assíncrona
+// b) Em sistemas com banco de dados muito grandes, é uma forma de ter mais eficiência em enviar as mensagens
+
 import axios from "axios";
 import { BASE_URL } from "./constants/url";
 import { user } from "./constants/types";
@@ -14,17 +17,15 @@ const sendNotifications = async (users: user[], message: string): Promise<any> =
 
   try {
 
-    for (const user of users) {
-      await axios.post(`${BASE_URL}/notifications`, {
+    const promises = users.map((user) => {
+      return axios.post(`${BASE_URL}/notifications`, {
         subscriberId: user.id,
         message
       })
-      console.log(`Message sent to user ${user.id}`);
-
-    }
-
-    console.log("All notifications sent.");
-
+    })
+    await Promise.all(promises)
+    console.log(`Notificações enviadas com sucesso`)
+    
   } catch (error: any) {
     const resp = error.response?.data || error.message
     console.log(resp)
