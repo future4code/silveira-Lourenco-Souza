@@ -2,28 +2,47 @@ import axios from "axios";
 import { BASE_URL } from "./constants/url";
 import { news, user } from "./constants/types";
 
-const myNews: news = {
-  title: "Mais frio vem por aí!",
-  content: "Uma onda de frio está à caminho para deixar o clima ainda mais congelado.",
-  date: Date.now()
+// -----------------------------------------------------------------------------------------
+
+const getSuscribes = async (): Promise<user[]> => {
+
+  const result = await axios.get(`${BASE_URL}/subscribers`)
+  return result.data
 }
 
+const sendNotifications = async (users: user[], message: string): Promise<any> => {
 
+  try {
 
-const main = async (news: news): Promise<void> => {
-  
-  try{
+    for (const user of users) {
+      axios.post(`${BASE_URL}/notifications`, {
+        subscriberId: user.id,
+        message
+      })
+      console.log(`Message sent to user ${user.id}`);
 
-    createNews(news)
-    const subscribers = await getAllSubscribers()
-    const subscribersIds = getSubscribersIds(subscribers)
-    await notifyAllsubscribers(subscribersIds)
+    }
 
-  } catch (error: any){
+    console.log("All notifications sent.");
+
+  } catch (error: any) {
     const resp = error.response?.data || error.message
-    console.log(resp);
-    
+    console.log(resp)
   }
 }
 
-main(myNews)
+// -----------------------------------------------------------------------------------------
+
+const main = async (message: string): Promise<void> => {
+  try {
+    const subscribers = await getSuscribes()
+    await sendNotifications(subscribers, message)
+
+  } catch (error: any) {
+    const resp = error.response?.data || error.message
+    console.log(resp)
+  }
+}
+
+const newMessage: string = "Olá a todos, Estou aqui!"
+main(newMessage)
