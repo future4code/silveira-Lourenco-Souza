@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { selectAllUsers } from "../data/migrations"
+import { selectAllUsers } from "../data/selectAllUsers"
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
