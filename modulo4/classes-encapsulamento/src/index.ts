@@ -124,4 +124,22 @@ const myTrade = new Transaction("Registros de transações da minha conta bancá
 minhaConta.setTransactions(myTrade)
 
 // #############################################################################################################
-// Exercício 2
+// Exercício 3
+
+class Bank
+{
+  private accounts:UserAccount[]
+
+    public getAccounts(): UserAccount[] {
+        return this.accounts;
+    }
+
+    public setAccounts(accounts: UserAccount[]): void {
+        this.accounts = accounts;
+    }
+
+  constructor(accounts:UserAccount[])
+  {
+    this.accounts = accounts
+  }
+}
